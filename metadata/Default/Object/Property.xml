@@ -1,0 +1,12 @@
+
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-OBJECT Resource="Property" Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	MetadataEntryID	ObjectType	MimeType	VisibleName	Description	ObjectTimeStamp	ObjectCount	</COLUMNS>
+<DATA>	BrandedPhoto	BrandedPhoto	image/jpeg	Full, Branded Photos	A branded image image (Not covered by the RETS Specification)			</DATA>
+<DATA>	BrandedThumbnailPhoto	BrandedThumbnail	image/jpeg	Small, Branded Photos	A branded lower-resolution image (Not covered by the RETS Specif			</DATA>
+<DATA>	EnlargedPhoto	Enlarged	image/jpeg	Enlarged  Photos	An enlarged image (Not covered by the RETS Specification)			</DATA>
+<DATA>	ThumbnailPhoto	Thumbnail	image/jpeg	Small Photos	A lower-resolution image related to the element defined by the r			</DATA>
+<DATA>	BrandedEnlargedPhoto	BrandedEnlarged	image/jpeg	Enlarged, Branded Photos	A branded and enlarged image (Not covered by the RETS Specificat			</DATA>
+<DATA>	Photo	Photo	image/jpeg	Full Photos	A representation image related to the element defined by the res			</DATA>
+</METADATA-OBJECT>
+</RETS>

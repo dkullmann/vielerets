@@ -1,0 +1,83 @@
+<?php
+
+//
+// Target Settings 
+//
+define("TYPE","");
+define("DESCRIPTION","");
+
+//
+// text information
+//
+define("FILE_NAME","");
+define("DATA_DOWNLOAD_PATH","");
+
+//
+// image information
+//
+define("INCLUDE_IMAGES",true);
+define("IMAGE_FILE_NAME","");
+define("IMAGE_REFERENCE_ONLY",false);
+define("IMAGE_ENCODED_URL",false);
+define("SERVER_IMAGES",true);
+define("IMAGE_URL","http://nowhere.com");
+define("IMAGE_DOWNLOAD_PATH","");
+
+//
+// GoogleBase
+//
+define("FORMAT","RSS_2.0");
+define("IMAGE_FIELD","");
+
+//
+// OpenRealty
+//
+define("OPEN_REALTY_INSTALL_PATH","");
+define("USERID_FIELD","userdb_id");
+define("USERID_NAME","userdb_user_name");
+define("METADATA_FIELD","");
+define("METADATA_TYPE","");
+define("METADATA_REQUIRED","");
+define("USER_FIELD","userdbelements_field_name");
+define("USER_VALUE","userdbelements_field_value");
+define("RETS_USER_ELEMENT","RETS_AGENT_ID");
+define("USER_TABLE","");
+define("CLASS_LISTING_TABLE","");
+define("CLASS_TABLE","");
+define("USER_ELEMENT_TABLE","");
+define("METADATA_TABLE","");
+define("COLUMN_LIST","");
+define("TYPE_LIST","");
+define("REQUIRED_LIST","");
+define("INDEX_TABLE","");
+define("DAYS_UNTIL_EXPIRATION","");
+define("IMAGE_UPLOAD_PATH","");
+define("THUMBNAILS",false);
+define("THUMBNAIL_PROGRAM","");
+define("GD_VERSION_2",false);
+define("PATH_TO_IMAGEMAGICK","");
+define("THUMBNAIL_WIDTH","");
+define("THUMBNAIL_QUALITY","");
+define("LISTING_DESCRIPTION_TEMPLATE","");
+
+//
+// RDB 
+//
+define("BRAND","");
+define("SERVER","");
+define("ACCOUNT","");
+define("PASSWORD","");
+define("DATABASE","");
+define("DATA_TABLE","");
+define("DATA_TABLE_KEY","");
+define("IMAGE_TABLE","");
+define("IMAGE_TABLE_KEY","");
+define("AUTO_CREATE",false);
+define("IMAGE_COLUMN_LIST","");
+
+//
+// XML 
+//
+define("CONTAINER_NAME","");
+
+?>

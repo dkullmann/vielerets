@@ -1,0 +1,53 @@
+/*******************************************************
+*
+* Clean up the exisiting tables
+*
+*******************************************************/
+DROP TABLE IF EXISTS j_data;
+DROP TABLE IF EXISTS j_image;
+
+/*******************************************************
+* Create new tables
+*******************************************************/
+
+/*******************************************************
+* RETS text data
+*******************************************************/
+CREATE TABLE j_data (
+     C_1 int unsigned NOT NULL AUTO_INCREMENT,
+     C_2 varchar(255),
+     LN varchar(255),
+     C_3 varchar(255),
+     C_4 varchar(255),
+     C_5 varchar(255),
+     C_6 varchar(255),
+     C_7 varchar(255),
+     C_8 varchar(255),
+     C_9 varchar(255),
+     C_10 varchar(255),
+     C_11 varchar(255),
+     C_12 varchar(255),
+     C_13 varchar(255),
+     C_14 varchar(255),
+     C_15 varchar(255),
+     C_16 varchar(255),
+     C_17 varchar(255),
+     C_18 varchar(255),
+     C_19 varchar(255),
+     C_20 varchar(255),
+     C_21 varchar(255),
+     C_22 varchar(255),
+     C_23 varchar(255),
+     C_24 varchar(255),
+    PRIMARY KEY (C_1)
+)  ENGINE=InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+/*******************************************************
+* RETS image data
+*******************************************************/
+CREATE TABLE j_image (
+     C_1 varchar(255),
+     C_2 varchar(255),
+     C_3 varchar(255),
+     C_4 varchar(255)
+)  ENGINE=InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;

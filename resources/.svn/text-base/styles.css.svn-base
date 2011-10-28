@@ -1,0 +1,45 @@
+/* this defines the default font for the entire document */
+
+BODY { font-family: Arial,Helvetica,sans-serif; }
+
+/* change the default link colors */
+
+A:link { color: blue }
+A:hover { color: red }
+
+
+/* this cell is for documentation block headings*/
+TD#docheading {
+               font-size: 12pt;
+               font-weight: bold;
+               color: green;
+               text-align: left;
+               vertical-align: middle;
+             } 
+
+/* this cell is for documentation block text*/
+TD#doctext {
+               font-size: 12pt;
+               font-style: italic;
+               color: green;
+               text-align: left;
+               vertical-align: top;
+             } 
+
+/* this cell is for section headings*/
+TD#sectionheading {
+               font-size: 14pt;
+               font-weight: bold;
+               color: green;
+               text-align: left;
+               vertical-align: top;
+             } 
+
+/* this cell is for standard text*/
+TD#sectiontext {
+               font-size: 14pt;
+               color: green;
+               text-align: left;
+               vertical-align: top;
+             } 
+

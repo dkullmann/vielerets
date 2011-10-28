@@ -1,0 +1,7 @@
+
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-LOOKUP Resource="Property" Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	MetadataEntryID	LookupName	VisibleName	Version	Date	</COLUMNS>
+<DATA>	Status	Status	Listing Status	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	</DATA>
+</METADATA-LOOKUP>
+</RETS>

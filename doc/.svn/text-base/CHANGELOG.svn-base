@@ -1,0 +1,471 @@
+
+				VieleRETS 
+
+
+Maintainer:	Mark Lesswing (info@crt.realtors.org)
+ 
+1.1.8 	TBD	
+
+	- Added buttom to SOURCE definition to unselect fields that are marked by the MLS.
+	- Improved mapping for EXTRACTS using OR or RDB TARGETS.
+	- Enhanced Auto-Detection to use MLS-Defined required search fields.
+	- Enhanced RDB mapping to allow the same field to be used multiple times.
+	- Updated ADODB components to version 5.07.
+	- Recoded authentication to allow credential sharing within a session.
+	- Reduced the number of times sockets need to be created.
+	- Fixed a bug in defining RDB targets against MS SQLServer databases.
+	- Added ALL_FIELDS, ALL_TYPES, ALL_INTERPRETATIONS and ALL_REQUIREDS parameters to SOURCE definitions.
+	- Added synchronize to MLS feature to OR and RDB Targets.
+	- Added null query option "DIRECT" to accomodate "known listings".
+	- Fixed bug in batching for servers who do not support pagination.
+	- Removed NON-AJAX processing.
+	- Deprecated the DETAIL_ITEMS and GALLERY_ITEMS parameters.
+	- Deprecated the NON_STANDARD_MEDIA parameter.
+	- Deprecated the STANDARD_SERVER_RESPONSE parameter.
+	- Server errors during Auto-Detect are now shown on the screen.
+
+1.1.7 	12/8/08	
+
+	- Improved sanity checking on SOURCE, TARGET and EXTRACT definitions.
+	- Fixed bug in Auto-Detecting COMPACT-DECODED capabilities.
+	- Auto-Detection improved looking for the Location option of RETS GetObject.
+	- Deprecated the MEDIA_LIST_ZERO_START parameter of SOURCE.  Servers in the field are handling this better now.
+	- Method for creating NULL Query now part of Auto-Detection.
+	- Removed images in the resources directory that are no longer used.
+	- Removed default image capability.
+	- Removed proxy processing for images.
+	- Added the IMAGE_ENCODED_URL parameter to TARGET (default false) for storage of url encoded references for images.
+	- Deprecated the MEDIA_VALIDATE and MEDIA_PROXY parameters of SOURCE for images.
+	- Deprecated the KEEP_ALIVE_SERVER and ENCODE_REQUESTS parameters of SOURCE for HTTP.
+	- Filter on Listing Agent to not allow dates, currency or lookups as choices.
+	- Deprecate the SERVER_TIME_DIFFERENCE parameter for SOURCE. Everything is processed in GMT time.
+
+1.1.6 	6/26/08	
+
+	- Added the DATA_TABLE_KEY configuration element to better control RDB TARGETs.
+	- Removed redundant setHTMLTrace() method from common_io.php.
+	- Replaced the setHTMLTrace() method with setTraceDevice() in abstractRetsExchange.php.
+	- Added ability to specify a trace file to abstractRetsExchange.php.
+	- Added the creation of the logs/ directory to the install and upgrade scripts.
+	- Changed AutoDetect to extend AbstractRetsExchange to inherit all trace functions.
+	- Added debug specification parameters to run_extract.php.
+	- Added debug specification parameters to download.php.
+	- Made the RETS Engine object a class variable of Downloader.
+	- Removed redundant payloadTrace variable from common_io.php.
+	- Restructured network stack abstraction.
+	- Added optimization for queries that require only a single batch.
+	- Added automatic log creation for the SOURCE definition process.
+	- Removed check for authentication challenge during SOURCE configuration.
+	- Fixed definition of EXTRACT with large number of columns.
+	- Reformatting of METADATA responses before caching is no longer the default.
+	- Removed SUBMIT_MERGE functionality to prevent corruption.
+	- Removed SUBMIT_CONFIG functionality to prevent corruption.
+	- Updated ADODB components to version 4.95.
+	- Fixed bug defining RDB targets that do not require images.
+	- Added AJAX processing.
+	- Fixed bug in reading servers that do not send a Mime header.
+	- Added ability to find DBName from metadata.
+	- RDB TARGET with AUTO_CREATE now uses DBName, SystemName or StandardName.
+	- Increased default batch size for non-pagination servers to 20 (from 10).
+	- Added NULL QUERY options that don't rely on unique identifier.
+	- Added automatic population of query forms for Lookup fields.
+	- Safari and Konqueror support.
+	- Added "meta-column" support to create a field by combining others.
+
+1.1.5 	6/20/07	
+
+	- Fixed the MAX_IMAGES settings for EXTRACTS that have PROXY_ON.
+	- Fixed bug that prevented image processing from being turned on after
+	  changing the SOURCE Resource to a "property" type.
+	- Fixed a bug in the LameParser.
+	- Added the Content-Type header information to Auto-Detect debugging
+	  dataset. 
+	- Added the query used to pull reference data set in Auto-Detect to 
+	  the debugging dataset. 
+	- Re-wrote Metadata persistence mechanism to facilitate RDB Extract
+	  column creation with type specific columns. 
+	- Simplified approach to obtaining Class Metadata. 
+	- Re-write of RDB Extract section of common/download.php. 
+	- Fixed a bug in RDB Extract that generated an incorrect WHERE clause
+	  when the value for the unique identifier appeared in more than one
+	  field of data. 
+	- Fixed a bug calculating the LastRun time in BCF. 
+	- Fixed a bug detecting duplicate images in RDB extracts. 
+	- Fixed a bug in PROXY based image pulls. Relative URLS not converted
+	  to fully qualified correctly. 
+	- Fixed a bug in RDB TARGETS that did not "escape" reserved column
+	  names in Microsoft SQLServer. 
+	- Improved efficiency of the first query to determine the total
+	  size of expected results for servers that support pagination. 
+	- Fixed a bug in RDB TARGETS that did not "escape" reserved column
+	  names in MySQL. 
+	- Fixed a bug in the "expert" mapping mode of EXTRACT that did not
+	  handle fields with no definition correctly.  Now filled with
+	  the text "--NOT USED--". 
+	- Added ability to define more than one Date field to consider when
+	  performing "delta" processing. 
+	- Fixed bug that did not url encode some messages passed between pages. 
+	- Corrected UI panel title information for SOURCE_DEPENDENTS. 
+
+1.1.4 	8/22/06	
+
+	- Fix for missing getNotice() function when setting
+	  DISPLAY_PROVIDER_NOTICE to true.
+	- Improvement in efficiency of OR-based downloads.
+	- Fix for bypassing images for SOURCES that do not contain listings.
+	- Fix for FlexMLS StandardName support.
+	- Fixed a bug reading headers for Content-Type if the character set
+	  is specified.  
+	- Fixed a bug in AutoDetect for servers that support some 
+	  StandardNames, but do not specify one for UniqueKey. 
+	- Added an optimation to bypass pagination if processing a query that 
+	  is not a NULL query.  The EXP_PAGINATION_THRESHOLD define in the
+	  {installation}/common/download.php file controls how many columns
+	  can be selected within this feature.  
+	- Fixed a bug clearing form definitions. 
+	- Fixed a bug simulating a NULL query that did not account for fields
+	  defined as type Small or Tiny. 
+	- Added the IMAGE_REFERENCE_ONLY configuration for TARGET to result in
+	  a URL to an image without incurring the download time.
+	- Added non-standard Media support for RETS servers who do not support
+	  GetObject.	
+	- Deprecated the TRANSLATE_DESCRIPTIONS setting for SOURCES.
+	- Added a clearstatcache() call to the METADATA->remove() function.	
+	- Changed Auto-Detection to use the built-in functions of the ENGINE.
+
+1.1.3 	6/09/06	
+
+	- Added the OFFSET_ADJUSTMENT and MEDIA_LIST_ZERO_START detection to 
+	  Auto-Detect.
+	- Fixed a bug dowloading specific images from servers that support
+	  media servers.  
+	- Added the OFFSET_ADJUSTMENT parameter to SOURCE configurations to
+	  handle RETS servers who interpret Offset to mean "n-1". 
+	- Fixed a bug in large image dowmloads with PROXY and server responds
+	  with "Chunked" encoding.
+	- Restructured the RETS code to form a RETS Engine (common/rets_lite).
+	- Added time zone offset to the SOURCE Connection configuration. 
+	- Fixed a bug in Radio text elements that did not initally select at 
+	  least one option.
+	- Fixed a bug that allowed illegal file system characters into 
+	  configuration file names. 
+	- Added ability to specify a RETS Limit from an EXTRACT. 
+	- When setting up an EXTRACT, if the TARGET is defined to be without
+	  images, the MEDIA_PROXY logic is bypassed. 
+	- Changed the workaround for RETS Servers that violate RFC 2045 in 
+	  Multipart GetObject responses to be configurable manually in code. 
+	- Added EXPERT level to mapping associations in OR and RDB EXTRACT
+	  data mappings.
+	- Allow QUERY_ITEM settings to be remembered for Auto-Detection on
+	  existing SOURCE definitions.
+	- Added DATE_VARIABLE in the SOURCE to be a list.  This allows the
+	  "update mode" to look at more than one date field.
+	- Fixed bug in CSV downloads that did not escape the " character.
+	- Moved common (non ELEMENT) screens to the COMMON directory.
+	- Fixed an unreported bug in servers that support StandardNames; Count
+	  was sent with a value of 1 instead of 0.
+	- Removed the Offset argument when asking for a query that begins
+	  with record #1. 
+	- Added notataions to selection screens for characteristics like non-
+	  displayable and non-searchable. 
+	- Added the ability to not update the Batch Control File when running
+	  a download with the GUI.
+	- Added an ALL capability to screens that allow multiple selections.
+	- Streamlined the screen navigation mechanism.
+	- Simplified UNIQUE_KEY specification due to the RESTRICTED_INDICATOR
+          capability. 
+	- Deprecated the Resource, Class setup screens because these could
+	  not be overriden without changing the context anyway. 
+	- Removed dependency on being connected to a RETS Server when
+	  overriding the results of Auto-Detection. 
+	- Removed filtering of fields that the RETS Server identify as "not
+	  displayable" to allow the RESTRICTED_INDICATOR to operate. 
+	- Added a RESTRICTED_INDICATOR parameter to SOURCE definitions. 
+	- Added the ability to copy SOURCE, TARGETS and EXTRACTS. 
+	- Updated documentation. 
+	- Added the "Advanced Query" feature to Batch Control Files.
+	- Added the ability to define an RDB TARGET without an images.
+	- Add "location" transparency to all screens to remove the directory
+	  information from the browser line.
+
+1.1.2 	5/03/06	
+
+	- Changed initial screen seen after install if the install script
+	  is not run. 
+	- Updated documentation. 
+	- Added notation on EXTRACTS to TARGET type RDB for the column of
+	  the image map that is used for the UNIQUE_KEY.
+	- Reorganized the SOURCE configuration screens to match Auto-Detection.
+	- Removed a screen for image options from the Auto-Detection logic.
+	  Media detection appears to be working well enough to eliminate this. 
+	- Changed all media access to start with element 1 instead of 0 for
+	  multiple images.
+	- Fixed a bug that started downloading images in array that started
+	  with 0 instead of 1.  Only was present in RETS servers that support
+	  Multipart image responses. 
+	- Fixed a bug in the return URL of data and image location definition
+	  screens.
+	- Added a new style menu for the Administration Interface to clear 
+	  the clutter.
+	- Subtracted one second from the execution time to make sure that
+	  subsequent "update modes" don't miss any listings due to the RETS
+	  "greater than" logic. 
+	- Fixed bug in in Mime responses when RETS server unexpectedly goes
+	  away. 
+	- Added the ability to rename SOURCE, TARGETS and EXTRACTS. 
+	- Consolidated code for configuration file management. 
+	- Abstracted the Source class to ease engine portability. 
+	- Added user contributed code to perform "image-only" processing to
+	  the "extras" directory (Yaron Kiflawi) 
+	- Added a workaround for RETS Servers that violate RFC 2045 in 
+	  Multipart GetObject responses. 
+	- Changed the documentation (FAQ) section to reflect the debate around 
+	  server vendor support of the Offset RETS option for the Search 
+	  Transaction.	
+
+1.1.1 	4/17/06 	
+
+	- Added convertion of  LookupMulti result separators to the OR 
+	  standard || separator for OR TARGETS. 
+	- Added ability to take advantage of multipart capabilities for images
+	  in addition to the existing URL usage. 
+	- Fixed bug processing UPDATE_ONLY in interactive mode. 
+	- Ryan made me add Date to all requests. 
+	- Fixed bug to set the date used by EXTRACT Batch Control Files to the
+	  start date instead of the finish date. 
+	- Added the ability to determine the data type of the unique key 
+	  creating the work around query for servers that do not support the
+	  RETS Offset option. 
+	- Added the ability to recover from server errors due to complex
+	  queries in both the workaround for servers that do not support the
+	  RETS Offset option.
+	- Fixed bug preventing the capture of listings in an EXTRACT that are
+	  part of a partial batch in the In-Memory workaround for RETS servers
+	  that do not support the RETS Offset option. 
+
+1.1.0 	4/05/06 	
+
+	- Fixed bug preventing the correct calculation of total batches to
+	  download. 
+	- Added a INDEX-ONLY mode for extracts that return only the unique
+	  key. 
+	- Fixed bug inserting updates to records. 
+	- Added a temporary file directory for handiling simulated batching. 
+	- Added a work around for servers that do not support OFFSET 
+	  (MarketLinx and MRIS).  BATCH_SIZE will be fixed for this case. 
+	- Removed quoting calls to PEAR module (RB). 
+	- Two extra calls to insert into OR removed (RB). 
+	- Fixed bug in Auto-Detection when looking for images without Location
+	  or Multipart support. 
+	- Added the ability to control the updating of a Batch Control File 
+	  with the UPDATE_BCF tag.
+	- Fixed bug that attached the date arguments to a simulated NULL query
+	  when aksing for only updates.  The simulated NULL query should be 
+	  replaced. 
+	- Fixed bug in definition of RBD TARGETS with data tables that have a 
+	  larger number of fields. 
+	- Fixed bug in interactive mode for OR TARGETS not bypassing unused 
+	  fields. 
+	- Exposed underlying server errors when running Auto-Detection. 
+	- Fixed bug in batch control files to allow multiple values for a
+	  field to be specified. 
+	- Vertical alignment improvement for radio button fields. 
+	- Fixed bug in the interactive mode for reading from the command line. 
+	- Fixed bug for reading boolean values from configuration files whose 
+	  value is a string value "1". 
+	- Fixed bug for servers that do not report back a user name 
+	  (MarketLinx). 
+	- Began refactoring to support GoogleBase in a future release. 
+	- Improved handling of "no network" condition. 
+	- Improved handling of "server not found" conditions. 
+	- Added reference list of names already defined when creating new
+	  SOURCE, TARGET or EXTRACT. 
+	- Began refactoring to support "MetaColumns" in a future release. 
+	- Fixed a bug detecting StandardNames servers. 
+	- Fixed a bug rendering some buttons that did not use the correct font. 
+	- Updated documentation. 
+	- Moved development to PHP 5. 
+	- Added logic to accomodate high speed NULL query. 
+	- Fixed bug for handling servers with numeric field names 
+          (InterRealty). 
+	- Added logic to accomodate servers that do not allow the RETS unique
+	  key to be displayed. 
+	- Fixed bug in CompactParser for results without trailing separator. 
+	- Added names to EXTRACT map definitions for CVS and XML. 
+	- Enhanced OR TARGETS to include a formatted listing description.
+	- Enhanced performace tracing to include server and VieleRETS timing.   
+	- Fixed bug in GetObject Multipart picking up the last image.   
+	- Recoded selection of SOURCE display fields to remove limits.   
+	- Increased field width on SOURCE accoutn and password fields.   
+	- Increased field width on SOURCE, TARGET and EXTRACT names.   
+	- Improved the handling of SOURCE definition errors in Auto-Detection. 
+	- Fixed bug that did not reset the EXTRACT data maps with the RESET 
+	  function.
+	- Added the RETS_CLIENT_PASSWORD to handle the Client Authentication
+	  for RETS 1.7 RETS-UA-Authorization options (InterRealty). 
+	- Removed the UserAgent information panel from SOURCE definition
+	  and moved information to the connection definition panel. 
+	- Improved error handling when defining a SOURCE to detect bad
+	  accounts or passwords. 
+	- Modified the insert of new listings for OR more efficient. 
+	- Added automatic mapping for OR columns that match RETS columns. 
+	- Recoded XML parsing of RETS responses for efficiency. 
+	- Fixed a bug in net_io.php for parsing host information from a 
+	  localhost located HTTP server when no internet connection has been
+	  established. 
+	- Added a screen to BATCH definition that checks the result of
+	  modifying USE_PROXY in combination with BATCH_SIZE in light of
+	  the capabilites of the RETS Server. 
+	- Updated documentation for the USE_PROXY prarmeter. 
+	- Updated the README.txt file. 
+	- Added the USE_PROXY parameter to EXTRACT to bypass of image proxy 
+	  processing.  When defining EXTRACTS with SOURCES that do not support
+	  the RETS Location option, this value defaulted to "false". 
+	- Removed the name screen from the EXTRACT setup sequence.  That
+          name is now entered in the same location as the TARGET and SOURCE. 
+	- Added firewall_check.php script to verify firewall settings. 
+	- FAQ clarified for limitations on the number of listings returned. 
+
+1.0.0 	12/23/05 (Production)	
+
+	- User Interface upgrade. 
+	- Fixed bug with servers that do not support RETS GetObject Multipart
+	  option and do not return proper headers. 
+	- Refined sections of code for efficiency. 
+
+1.0.0 	12/17/05 (Release Candidate 1)	
+
+	- Added icons for Browser Proxy used in SOURCE Informatinal Displays
+	  DISPLAY_PROVIDER_NOTICE option. 
+	- Created a new directory called "extras" to store movable proxy
+	  and the script to use Open-Realty administration passwords.  
+	- Added a configuration parameter to SOURCE to allow the proxy to
+	  be located in a directory other than the installation.
+	- Fixed a bug for image downloads that prevented the proxy from
+	  existing is a directory other than the installation. 
+
+0.9.2	12/09/05	
+
+	- Fixed a bug creating User-Agent for RETS servers that allow this
+	  header to be created unconventionally. 
+	- Fixed a bug for gathering statistics for Retriever instances that
+	  handle multiple RETS sessions. 
+	- Fixed bug referencing metadata for SOURCE configurations that are
+	  copied and not detected.
+	- Added methods to Retriever class preparing for an API that is not
+	  dependent on CONFIGURATION files.
+	- Removed Snoopy classes from repository. 
+	- Added the "mls" field of OR as a required field. 
+	- Fixed bug parsing RETS METADATA when array being requested has the
+	  same key and value columns (rare).
+	- Fixed bug adding items to configurations during upgrades.
+	- Support for Open-Realty Version 2.1.
+	- Fixed bug displaying account names in OR extract summary.
+	- Fixed bug displaying multiple accounts in OR extract definition.
+	- Added Panel to Auto-Detection to change image settings.
+	- Added timeout fix for Auto-Detection and downloading.
+	- Consolidated trace and batch parameters onto one panel.
+	- Added configuration parameter to EXTRACT to specify maximum number
+	  of images to download.  Only used if the server does not support
+	  multipart option of RETS GetObject.	
+	- Separated media_proxy.php into model and view components.	
+
+0.9.1	11/09/05	
+
+	- Added documentation for command file processing in the 
+	  Configuration Guide. 
+	- Removed extra step defining download locations for CSV, RDB and 
+	  XML image and text locations. 
+	- Added auto-generation of control files (batch_control_files). 
+	- Added indexing to Configurations for efficiency. 
+	- Fixed bug reading Chunked output on closed sockets.
+	- Added command-line control file controlled download. 
+	- Fixed bugs to in that prevented image download in certain
+	  cases. Snoopy class replaced with NetRequest class. 
+	- Re-factored the download logic. 
+	- Added command-line interactive download. 
+	- Removed redundant code from run_results.php. 
+	- Improved CVS image download to name the ID column the same 
+	  as the text download unique column name.
+	- Fixed bug to ignore PHPSESSID when updating configurations.
+	- Improved documentation.
+
+0.9.0	10/25/05
+
+	- Fixed bug in RDB auto-create.
+	- Completed CSV capability.
+	- Completed XML capability.
+	- Fixed bug for navigation path on TARGET and EXTRACT delete. 
+	- Fixed bug introduced in 0.8.8 for creating extracts with
+	  TARGET type of Open-Realty. 
+	- Removed shutdown handling function for download.  It wasn't
+	  really doing what it was supposed to.
+	- Instrumented Trial section of Auto-Detection.
+ 
+0.8.8	10/10/05
+
+	- Added new panel to specify directories for image download.
+	- Completed RDB capability.
+	- Added ability to set the Date field as part of Auto-Detection.
+	- Added ability to set the Agent ID field as part of Auto-Detection.
+	- Fixed bug for PHP5, use of reserved use clone as a function.
+        - Added lookup values to query forms as part of Auto-Detection.
+	- Allow for multi-selection on lookup.	
+	- Fixed bug in generating queries for fields defined as lookup.	
+	- Improved efficiency of Auto-Detection.	
+	
+0.8.7 	9/29/05 
+
+        - Added query field selection to Auto-Detection.
+        - Added media options to Auto-Detection.
+        - Added the ability to use server defaults for form values.
+        - Reduced atomic level of batch processing.
+	- Added parameter to configure batch size for an extract.  
+	  Found in the Execution Parameters section.  Default is 10. 
+	- Fixed bug for extracts that do not have maps. 
+	- Removed "patch" for auto-detecting Rappatoni 1.5 Unique 
+	  Key used during their beta period. 
+	- Restructured setup directory.
+        - Expanded metdata caching to include Resource, Object, Class,
+          Lookup and LookupType.
+	- Restructured common directory.
+	- Fixed bug for Open-Realty extracts that didn't show any users
+	  if only one was defined. 
+	- Fixed bug for NULL queries. 
+	- fixed bug for calculation of last batch in some multiple batch
+	  scenarios. 
+	- Fixed bug for Open-Realty tables set up for other than the default
+	  language.
+	- Map default set to "Not Used" for all fields.
+	- Open-Realty extracts no longer allow the REMOVE function from maps. 
+	- Changing the User-Agent values are now part of the Auto-Detection
+          process. 
+	- Added capability to delete definitions in forms. 
+	- Search Forms definition screen now has visual clue that either
+	  defaults or dropt down box definitions exist.
+	- Added capability to set a default value on a form.  Keyword VISIBLE
+          makes the field visible, any other value (like DEFAULT) makes it
+          hidden.
+	- Fixed bug to preserve user supplied data in Open-Realty.
+	- Fixed bug in ImageMagick if thumb width is not known.
+
+0.8.6 	9/11/05   
+
+	- Fixed image bug with proxy usage.
+	- Added ability to retain user supplied information with
+          the MLS_ONLY configuration item in extract that. MLS_ONLY
+          is set to false by default.
+	- Improved trace output during download process.
+	- Improved error reporting during download process.
+	- Updated documentation for MLS_ONLY setting.
+
+0.8.5 	9/09/05   
+
+	- Fixed image failure in some secure hosting facilities.
+	- Added dependencies to the README.
+
+0.8.0 	8/17/05   
+
+	- Initial Release.
+	- OpenRealty version.
+

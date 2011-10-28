@@ -1,0 +1,1047 @@
+<html>
+
+<head>
+<title>VieleRETS Documentation</title>
+<link rel="stylesheet" type="text/css" href="./resources/styles.css">
+</head>
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+
+<table border="0" cellspacing="10" cellpadding="0">
+
+
+
+
+
+<!-- header -->
+
+<tr align="left">
+<td>
+
+<table border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+
+<!-- logo -->
+<td>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td><img src="./resources/viele_logo.gif"></td></tr>
+<tr><td><br/></td></tr>
+</table>
+</td>
+<!-- logo -->
+
+<!-- document block -->
+<td>
+
+<table border="2" cellspacing="0" cellpadding="5">
+
+<tr>
+<td id="docheading">
+Project Name
+</td>
+<td id="doctext">
+VieleRETS 1.1 
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Publication Name
+</td>
+<td id="doctext">
+Configuration Guide
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Publication Date
+</td>
+<td id="doctext">
+June 2006
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Maintainer
+</td>
+<td id="doctext">
+mlesswing@realtors.org
+</td>
+</tr>
+
+</table>
+</td>
+<!-- document block -->
+
+</tr>
+
+</table>
+</td>
+
+</tr>
+
+<!-- header -->
+
+
+
+
+<tr>
+<td>
+
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+
+<td>
+<a href="./configurationGuide.html">Configuration Guide</a>
+</td>
+
+<td>
+<a href="./index.html">Table of Contents</a>
+</td>
+
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+
+
+
+
+<!-- package configuration -->
+
+<tr>
+<td>
+<table border="0" cellspacing="10" cellpadding="0">
+
+<tr>
+<td id="sectionheading">
+1.0 Source Configuration 
+</td>
+</tr>
+
+<tr>
+<td>
+<table border="0" cellspacing="10" cellpadding="0">
+
+<tr>
+<td id="sectiontext">
+
+The most difficult part about configurating this package is making a connection
+to the MLS server.  Even with standards like RETS there are enough variations
+between server vendors to cause frustration. A configuration file is used to 
+specify how the package communicates with the MLS server and specifies options
+for your connection.
+
+<br/><br/>
+
+<var>Source</var> configuration files are plain text format and can be found at
+<a href="./installDistribution.html#installation_directory">{<var>INSTALLATION_DIRECTORY</var>}</a>
+/ 
+<a href="./installDistribution.html#sources_directory">{<var>SOURCES_DIRECTORY</var>}</a> 
+/{<var>SITE_NAME</var>}.  The <var>SITE_NAME</var> is specified when a 
+<var>Source</var> is    
+<a href="./createSource.html">defined</a>
+.  If you have multiple Sources defined, there will be more than one file
+in the <var>SOURCES_DIRECTORY</var>.  It is a good idea to keep a backup of
+<var>Source</var> configurations in this directory. 
+
+<br/><br/>
+
+You need a Source defined for each MLS you would like to connect to.  If you
+only plan to connect to a single MLS you will need one of these files, even 
+if you plan to support multiple Broker/Agent sites.  The settings shipped with
+the distribution will connect to the demonstration server operated by the   
+<a href="http://www.realtors.org/crt">Center for REALTOR&reg; Technology</a>
+, a division of the National Association of REALTORS&reg;. 
+
+<br/><br/>
+
+As this package matures, attempts are being be made to "auto-detect" as many of these
+variables as possible.
+
+<br/><br/>
+
+This file has different <var>sections</var> that are used to divide configuration 
+information into logical groups:
+
+<ul>
+
+<li><a href="#connection">Connection</a> 
+for connecting to a RETS Server
+<br/><br/>
+</li>
+ 
+<li><a href="#auto_detection">Auto Detection</a> 
+for probing a RETS Server and determining capabilities
+<br/><br/>
+</li>
+ 
+<li><a href="#override_auto_detection">Override Auto Detection</a> 
+for changing values derived form Auto Detection 
+<br/><br/>
+</li>
+ 
+<li><a href="#refresh">Refresh Metadata</a> 
+for downloading a copy of the RETS metadata from the server
+<br/><br/>
+</li>
+ 
+<li><a href="#streaming">High Volume Streaming (Retriever Only)</a> 
+for high volume applications
+<br/><br/>
+</li>
+ 
+<li><a href="#display">Informational Displays</a> 
+for performance tuning and informational displays 
+<br/><br/>
+</li>
+ 
+<li><a href="#dependents">Dependent Settings</a> 
+specifies text to be used in Summary, Detail and Gallery Views as well
+as RETS Server image options.
+<br/><br/>
+</li>
+ 
+<li><a href="#forms">Search Forms</a> 
+for creating search forms to the RETS Server
+</li>
+ 
+</ul>
+ 
+</td>
+</tr>
+
+<tr>
+<td>
+  <table border="0" cellspacing="10" cellpadding="0">
+
+<!--         -->
+    <tr>
+    <td>
+    <table border="1">
+
+    <tr>
+    <td id="sectionheading">
+<a name="connection">Connection</a>
+      <table border="0" cellspacing="10" cellpadding="0">
+      <tr>
+      <td id="sectionText">
+
+This section identifies which RETS server you are connecting to.  You will
+need to obtain the information for these settings from you service provider.
+The distribution provides defaults that allow you to connect to the
+demonstration server operated by CRT.
+
+<br/><br/>
+
+Some RETS servers require a special "User-Agent" setting.  User-Agent 
+headers are part of the HTTP protocol and allow a server to identify the
+software package being used to access the server.  Some servers use this header
+to identify users.  The User-Agent header has two components and is structured
+in the following format:
+
+<xmp>APPLICATION/VERSION</xmp>
+
+If you were given a User-Agent value by you service provider, supply the 
+information in the connection panel.
+
+<ul>
+
+<li><b>RETS_SERVER_ACCOUNT</b> - The name of the RETS account.  Defaults to 
+"Joe". 
+<br/><br/>
+</li>
+ 
+<li><b>RETS_SERVER_PASSWORD</b> - The password of RETS account.  Defaults to
+"Schmoe".
+<br/><br/>
+</li>
+ 
+<li><b>RETS_SERVER_URL</b> - The URL of the RETS server.  Defaults to 
+"http://demo.crt.realtors.org:6103/rets/login".
+<br/><br/>
+</li>
+ 
+<li><b>RETS_CLIENT_PASSWORD</b> - The password of RETS client required by some
+RETS servers.  You normally will not need to set this. Defaults to NULL or "".
+<br/><br/>
+</li>
+ 
+<li><b>RETS_DEFAULT_PORT</b> - The port to use if the RETS server is not
+specific during its reply to a login.  The RETS specification identifies 6103
+as the default port, but in practice, many providers use 80.  This is probably
+because the HTTP default is 80.  Defaults to "80".
+<br/><br/>
+</li>
+ 
+<li><b>APPLICATION</b> - The network identification (name) of this client for
+use within the HTTP protocol.  If you change this, make sure that you only use
+one word.  Defaults to "VieleRETS".
+<br/><br/>
+</li>
+
+<li><b>VERSION</b> - Part of the HTTP client identifcation that signifies
+version number.  You can leave this blank if the User-Agent supplied to you by
+the MLS is not in the form APPLICATION/VERSION. Defaults to "1.1".
+<br/><br/>
+</li>
+
+<li><b>KEEP_ALIVE_SERVER</b> - Specify whether the RETS server supports
+keep-alive tcp sockets.  Setting this to "true" will result in avoiding 
+setting up a new tcp socket between this package and the RETS server for each
+communication and will result in higher performance.  Not all RETS servers 
+support this capability.  If you are not sure, leave it as "false".  Defaults 
+to "false".
+<br/><br/>
+</li>
+ 
+<li><b>ENCODE_REQUESTS</b> - Specify whether the RETS server supports
+requests that are URL Encoded. Typically this is set to "true".  If you 
+use the default value and have problems executing queries that have values
+with spaces (like area="Hidden Oaks") then try setting this to "false".
+Defaults to "true".
+<br/><br/>
+</li>
+ 
+<li><b>POST_REQUESTS</b> - Specify whether the  you want to use POST or GET
+style HTTP requests.  Some older servers have a problem with long GET style
+requests and even construct Digest Authentication incorrectly with GET.  If
+you are trying to return more than 60 fields for any one listing and the 
+package fails, but bringing back 10 fields works, then you might want to 
+leave this set to "true".  Defaults to "true".
+<br/><br/>
+</li>
+ 
+<li><b>STANDARD_SERVER_RESPONSE</b> - Some servers that claim to be RETS 
+compliant actually produce non-standard XML data.  Their responses are not
+well formed and cannot be parsed with standard XML parsers as the RETS
+Standard intended.  If you are trying to configure one of these sources,
+set this to "false".  This setting is new to Version 2.0.  The default is 
+"true".  
+<br/><br/>
+</li>
+ 
+<li><b>SERVER_TIME_DIFFERENCE</b> - The difference in hours between your
+location and the location of the server.  This is handy for helping the
+time-based "Updates Only" feature handle the concept of midnight.
+</li>
+ 
+</ul>
+
+The following setting is auto-detected by the package and stored in the
+configuration file.
+<ul>
+
+<li><b>DETECTED_SERVER_NAME</b> - The name of the server derived from the HTTP 
+headers.  This value is set by the server you are connected to.
+</li>
+ 
+</ul>
+
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+    </table>
+    </td>
+    </tr>
+<!--         -->
+    <tr>
+    <td>
+    <table border="1">
+
+  <tr>
+  <td id="sectionheading">
+<a name="auto_detection">Auto-Detection</a>
+    <table border="0" cellspacing="10" cellpadding="0">
+    <tr>
+    <td id="sectionText">
+
+This section described the auto-detection capabilities of the package.  The 
+performs multiple logins to the server and trys to detect capabilities.  
+
+The next screen prompts you for the 
+<a href="#selection_resource">Resource</a> 
+to use with this <var>Source</var>.
+
+<br/><br/>
+
+The next screen you will see will allow you to choose a 
+<a href="#selection_class">Class</a> 
+within the requested Resource.  The list of available classes is different 
+for every Resource.
+
+<br/><br/>
+
+The following settings are then detected.  There are no default values for 
+these settings and they are presented in the order that they are detected.
+
+<ul>
+
+<li><a href="#unique_key"><b>UNIQUE_KEY</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#standard_names"><b>DETECTED_STANDARD_NAMES</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#max_rets_version"><b>DETECTED_MAXIMUM_RETS_VERSION</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#compact_decoded"><b>COMPACT_DECODED_FORMAT</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#pagination"><b>PAGINATION</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#offset_adjust"><b>OFFSET_ADJUSTMENT</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#media_multipart"><b>MEDIA_MULTIPART</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#media_location"><b>MEDIA_LOCATION</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#media_zero"><b>MEDIA_LIST_ZERO_START</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#non_standard_media"><b>NON_STANDARD_MEDIA</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#non_standard_media_resource"><b>NON_STANDARD_MEDIA_RESOURCE</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#non_standard_media_class"><b>NON_STANDARD_MEDIA_CLASS</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#non_standard_media_type"><b>NON_STANDARD_MEDIA_TYPE</b></a>
+</li>
+ 
+</ul>
+
+After detection, you will see a screen that allows you to override the detected
+values.  The last sequence of screens allow you to set the following dependent
+parameters for the Resource/Class combination. 
+
+<ul>
+
+<li><a href="#query_items"><b>QUERY_ITEMS</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#ownership_variable"><b>OWNERSHIP_VARIABLE</b></a>
+<br/><br/>
+</li>
+ 
+<li><a href="#date_variable"><b>DATE_VARIABLE</b></a>
+</li>
+ 
+</ul>
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+    </table>
+    </td>
+    </tr>
+<!--         -->
+    <tr>
+    <td>
+    <table border="1">
+
+  <tr>
+  <td id="sectionheading">
+<a name="override_auto_detection">Override Auto-Detection</a>
+    <table border="0" cellspacing="10" cellpadding="0">
+    <tr>
+    <td id="sectionText">
+
+Although the package has the ability to auto detect capabilities of the server,
+sometimes it is necessary to change these values.  The following values can only
+be changed by resetting the <var>Source</var> though because they define the 
+context:
+
+<ul>
+
+<li><a name="selection_resource"><b>SELECTION_RESOURCE</b></a>
+- The RETS resource to use for a query.  The RETS
+standard identifies "Property" as the common name for this. 
+This setting is used for both
+<a href="#dependents">Text and Media</a> 
+queries.
+<br/><br/>
+</li>
+ 
+<li><a name="selection_class"><b>SELECTION_CLASS</b></a>
+- The RETS class to use for a query.  The RETS 
+standard does not identify a common name.  This setting is highly dependent on
+your service provider.  The demo server that CRT opertates has data in only
+one class, "RES".
+This setting is used for 
+<a href="#dependents">Text</a> 
+queries.
+</li>
+
+</ul>
+ 
+The following values can be changed withing the defined context:
+
+<ul>
+
+<a name="unique_key"><b>UNIQUE_KEY</b></a>
+- The name of the data element that is the unique key for
+the data.  This is typically the listing number for property data.  This value 
+is highly site dependent.
+<br/><br/>
+</li>
+ 
+<li><a name="standard_names"><b>DETECTED_STANDARD_NAMES</b></a>
+- If the server you are using supports RETS
+Standard Names, this value is set to "true".  This setting affects the values
+for the following 
+<a href="#dependents">Dependent</a> 
+settings:
+
+<ul>
+
+<li>OWNERSHIP_VARIABLE</li>
+<li>QUERY_ITEMS</li>
+<li>DETAIL_ITEMS</li>
+<li>GALLERY_ITEMS</li>
+<li>SUMMARY_ITEMS</li>
+
+</ul>
+
+<br/>
+</li>
+ 
+<li><a name="max_rets_version"><b>DETECTED_MAXIMUM_RETS_VERSION</b></a>
+- The maximum version of RETS that 
+this server supports.  This value can be 1.0, 1.5 or 1.7.
+<br/><br/>
+</li>
+ 
+<li><a name="compact_decoded"><b>COMPACT_DECODED_FORMAT</b></a>
+- If the server you are using supports RETS
+Standard COMPACT-DECODED format, you should set this value to "true".  When
+set to "true", data fields that are comma separated lists (like "features")
+will be expanded to a more verbose form by the server. If you set this value to
+"false", your site will be asked to supply RETS COMPACT format.  This package 
+does not support RETS STANDARD_XML format yet.
+<br/><br/>
+</li>
+ 
+<li><a name="pagination"><b>PAGINATION</b></a>
+- Some servers do not support enough of the RETS standard 
+to allow query results to be packaged into pages for easier viewing.
+<br/><br/>
+</li>
+ 
+<li><a name="offset_adjust"><b>OFFSET_ADJUSTMENT</b></a>
+- If the server interprets the RETS Offset as being "n-1",
+set this value to "true".  You can tell if this is happening when the first
+listing in the first batch is missing.  Specifically, servers that 
+use "n-1" logic interpret an Offset=10 to mean the eleventh record because it
+begins counting at zero instead of one.  For "n-1" servers set this to -1. A 
+"n" logic server would interpret Offset=10 to mean the tenth record because it
+begins counting at one.  Most RETS servers are the "n" logic variety.  For "n"
+servers set this to 0. Auto-Detection attempts to determine the server type 
+("n" or "n-1").  
+Defaults to "0".
+<br/><br/>
+</li>
+ 
+<li><a name="media_multipart"><b>MEDIA_MULTIPART</b></a>
+- If the server supports the RETS multi-part option,
+set this value to "true".  When set to true, a single request to the server
+returns all information about the images for a property.  This setting is
+highly site dependent and only relevant if the MEDIA_LOCATION parameter is set
+to "true".  Defaults to "true".
+<br/><br/>
+</li>
+ 
+<li><a name="media_location"><b>MEDIA_LOCATION</b></a>
+- If the server supports the RETS Location option, 
+set this value "true".  When set to "true", the location from the RETS server 
+is assumed to be a direct URL to the media.  When set to "false", a proxy
+specified by the
+<a href="#media_proxy">MEDIA_PROXY</a>
+setting is used to serve the image to the browser.  Defaults to "true".
+<br/><br/>
+</li>
+ 
+<li><a name="media_zero"><b>MEDIA_LIST_ZERO_START</b></a>
+- If the server starts counting images at one,
+set this value to "true".  This setting is only relevant if either the 
+MEDIA_MULTIPART or MEDIA_LOCATION parameters (see above) are set to "false".  
+If the server starts counting images at zero, set this value to "false".  
+Defaults to "false".
+</li>
+ 
+<li><a name="non_standard_media"><b>NON_STANDARD_MEDIA</b></a>
+- Some RETS servers do no support the RETS GetObject Transaction but do make
+images available through a Search transaction.  The package identifies these
+servers during Auto-Detection and sets this parameter.
+Defaults tp "false".
+<br/><br/>
+</li>
+ 
+<li><a name="non_standard_media_resource"><b>NON_STANDARD_MEDIA_RESOURCE</b></a>
+If you are trying to connect to a RETS server that supports media in a
+non-standard way (see NON_STANDARD_MEDIA), this parameter holds the name of the
+Resource that can be used to access images.
+Defaults to NULL.
+<br/><br/>
+</li>
+ 
+<li><a name="non_standard_media_class"><b>NON_STANDARD_MEDIA_CLASS</b></a>
+If you are trying to connect to a RETS server that supports media in a
+non-standard way (see NON_STANDARD_MEDIA), this parameter holds the name of the
+Class that can be used to access images.
+Defaults to NULL.
+<br/><br/>
+</li>
+ 
+<li><a name="non_standard_media_type"><b>NON_STANDARD_MEDIA_TYPE</b></a>
+If you are trying to connect to a RETS server that supports media in a
+non-standard way (see NON_STANDARD_MEDIA), this parameter holds the name of the
+Type that can be used to access images.  This value is site dependent so you
+will have to check with your service provider.
+Defaults to NULL.
+</li>
+
+</ul>
+
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+    </table>
+    </td>
+    </tr>
+<!--         -->
+    <tr>
+    <td>
+    <table border="1">
+
+    <tr>
+    <td id="sectionheading">
+<a name="refresh">Refresh Metadata</a>
+      <table border="0" cellspacing="10" cellpadding="0">
+      <tr>
+      <td id="sectionText">
+
+The package keeps a copy of the metadata (information about the fields) for
+the server locally as a performace enhancement.  The RETS specification
+encourages this practice.
+
+<br/><br/>
+
+When a <var>Source</var> is created, a copy of the metadata is taken.  The
+server operator may change the metadata in the future.  You can grab a new
+copy of the metadata with this option.
+
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+    </table>
+    </td>
+    </tr>
+<!--         -->
+    <tr>
+    <td>
+    <table border="1">
+
+    <tr>
+    <td id="sectionheading">
+<a name="streaming">High Volume Streaming (Retriever Only)</a>
+      <table border="0" cellspacing="10" cellpadding="0">
+      <tr>
+      <td id="sectionText">
+
+This section contains parameters that you might find useful if you anticipate
+processing thousands of rows or if you are continually running out of memory.
+If neither of these conditions is not present, you should leave these settings
+at their default setting which leave streaming turned off.  If you use this
+capability, "pagination" will not be possible.
+
+<br/>
+
+<ul>
+
+<li><b>STREAM_PROCESSING</b> - Specify whether you would like to perform
+"on-the-fly" rendering of the listings.  Set this to "true" if you anticipate
+processing result sets with thousands of listings.  If you plan to use this
+project as the basis for an application that does something other than 
+creating HTML pages, you might find it handy to set this to "true".  If you
+run out of memory while processing records, you should set this to "true".
+This is a new setting as of Version 2.0. Defaults to "false".
+<br/><br/>
+</li>
+ 
+<li><b>SIMULTANEOUS_LOGINS</b> - This setting is only relavent if you set 
+STREAM_PROCESSING to "true".  To accomplish streaming, this package needs to 
+either issue an embedded session or a concurrent transaction.  Embedded
+sessions require that the server support more than one session with the same
+login.  Many older RETS Servers support this, but for security reasons, some
+newer RETS Servers do not.  The reason that the newer servers do not support
+multiple session with the same login is to discourage the practice of
+"sharing logins".  This practice is looked down upon in all security circles.
+Setting this parameter to "true" allows older, less secure RETS Servers to
+perform streaming.  If you require streaming, you should try to work with
+servers that support "simultaneous sessions".  This is a new setting as of
+Version 2.0. Defaults to "false".
+</li>
+ 
+</ul>
+
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+    </table>
+    </td>
+    </tr>
+<!--         -->
+    <tr>
+    <td>
+    <table border="1">
+
+    <tr>
+    <td id="sectionheading">
+<a name="display">Informational Displays</a>
+      <table border="0" cellspacing="10" cellpadding="0">
+      <tr>
+      <td id="sectionText">
+
+This section allows you to display extra information to help you tune the
+package for performance.  It can also display information that will help you
+"debug" installations with your MLS.  
+
+<ul>
+
+<li><b>DISPLAY_PERFORMACE</b> - Generates a pair of tables that contain
+performance information.  One table contains runtime statistics and the other
+contains the settings that might affect performance.  Defaults to "false".
+<br/><br/>
+</li>
+ 
+<li><b>DISPLAY_RETS</b> - Generates a table the summarizes all RETS 
+sent to the RETS Server.  These are sorted by transaction type (Login, Search,
+GetMetadata, GetObject and Logout).  If multiple RETS transactions were 
+required (as is the case with GetObject for multiple images), each call is
+documented.  Defaults to "false".
+<br/><br/>
+</li>
+ 
+<li><b>DISPLAY_PROVIDER_NOTICE</b> - Many RETS servers support the passing of
+notices from the MLS to the member as part of RETS.  This configuration item
+generates a table that displays this notice.  Defaults to "false".
+<br/><br/>
+</li>
+ 
+<li><b>DISPLAY_ACCOUNT</b> - When logging into a RETS server, a summary of
+account information is returned.  This configuration item generates a table 
+that displays the account information.  This table may help you determine the
+correct setting for the
+<a href="#ownership_variable">OWNERSHIP_VARIABLE</a> 
+ presented below. Defaults to "false".
+</li>
+ 
+</ul>
+
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+    </table>
+    </td>
+    </tr>
+<!--         -->
+    <tr>
+    <td>
+    <table border="1">
+
+  <tr>
+  <td id="sectionheading">
+<a name="dependents">Dependent Settings</a>
+    <table border="0" cellspacing="10" cellpadding="0">
+    <tr>
+    <td id="sectionText">
+
+This section contains settings for parameters that are dependent of a 
+particular combination of Resource and Class.
+You will need to consult with your service provider
+for proper settings.  The <var>help</var> key next to each item brings up a
+dialog with all possible values.  In some cases, the <var>help</var> screen 
+includes a CLEAR button to set all values to null. 
+
+<ul>
+
+<li>
+<a name="ownership_variable"><b>OWNERSHIP_VARIABLE</b></a>
+- Used to define which data element is used to
+identify the ownership of the record and is usually the agentID field.  This
+is highly site dependent.
+<br/><br/>
+</li>
+ 
+<li>
+<a name="date_variable"><b>DATE_VARIABLE</b></a>
+- Used to define which data element is used to
+identify the date.  This
+is highly site dependent.
+<br/><br/>
+</li>
+ 
+<li><b>DETAIL_ITEMS (Retriever Only)</b> - The items to be returned from a 
+query made for a detail level display of a listing.  These are highly site 
+dependent.  
+<br/><br/>
+</li>
+ 
+<li><b>GALLERY_ITEMS (Retriever Only)</b> - The items to be returned from a 
+query made for a gallery level display of a listing.  These are highly site 
+dependent.  
+<br/><br/>
+</li>
+ 
+<li><a name="summary_items"><b>SUMMARY_ITEMS</b></a>
+The items to be returned from a query made for a summary level display of a 
+listing.  In the case of VieleRETS, this parameter is used to define which 
+fields will be returned from a query.  These are highly site dependent.  
+<br/><br/>
+</li>
+ 
+<li><b>QUERY_ITEMS</b> - The items to be shown on a form that enables queries.
+These are highly site dependent.  
+<br/><br/>
+</li>
+
+<li><b>TRANSLATE_DESCRIPTIONS</b> - If the server you are using a) supports
+RETS Standard metadata and b) produces well formed XML, you should set this
+value to "true".  When set to "true", the descriptions of the data elements
+will automatically be translated to a longer, consumer-friendly form. If you 
+set this value value to "false", the descriptions of the fields will not be
+ translated to their long description format.  The default is "true".  This 
+setting is deprecated as of Version 1.1.4.
+<br/><br/>
+</li>
+ 
+<li><b>RESTRICTED_INDCATOR</b> - Some RETS Servers define fields as being
+restricted from viewing.  Typically, the server should fill these fields with
+formatting of their choice.  This parameter allows you to define the formatting
+of these restricted fields if you don't care for the server formatting (or if
+the server does not format at all!).
+<br/><br/>
+</li>
+ 
+<li><b>MEDIA_TYPE</b> - The type of media to be displayed in the media table.
+The RETS specification identifies some common values for this field.  Defaults
+to "Photo".
+<br/><br/>
+</li>
+ 
+<li><a name="media_proxy"><b>MEDIA_PROXY</b></a>
+- This setting controls the handling of RETS Servers that
+do not support the Location option of the RETS GetObject transaction.  In these
+cases, a "proxy" is supplied with the distribution to take advantage of 
+multi-threading in the browser.  This proxy is located withing the distribution
+by default.  If you would like to move it to another location, you should
+specify the "web" address to use here.  Do not use the location of the 
+directory.  You should also use the script found in the   
+<a href="./installDistribution.html#extras_directory">extras directory</a> 
+called "movable_media_proxy.php" as a sample of the proxy.  You will need to
+modify this file to point at this distribution.
+<br/><br/>
+</li>
+
+<li><b>MEDIA_VALIDATE</b> - This setting will validate if media actually exists
+on the server BEFORE the page is rendered by the browser.  It will slow down
+page generation significantly because images will be requested twice.  If your
+server has many missing images, it may be helpful to turn this to "true".  On
+the other hand, if your MLS has a pretty good fill of images, you might want to
+turn this to "false".  Defaults to "false".
+</li>
+ 
+</ul>
+
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+    </table>
+    </td>
+    </tr>
+<!--         -->
+    <tr>
+    <td>
+    <table border="1">
+
+  <tr>
+  <td id="sectionheading">
+<a name="forms">Search Forms</a>
+    <table border="0" cellspacing="10" cellpadding="0">
+    <tr>
+    <td id="sectionText">
+
+This section contains settings for forms-based prompts for the consumer.
+You will need some knowledge or the RETS DMQL specifcation language if you want
+to define complex prompts.  There is a built-in governor that will only allow
+a maximum of 99 listings to be returned.  This feature eases the burden on RETS
+servers for "wide open" searches.
+
+<br/><br/>
+
+The distribution has an example of defining forms.  The definition looks like 
+this:
+
+<xmp>define("QUERY_ITEMS","ListingID,ListPrice,StreetName,PostalCode");</xmp>
+
+In this case, a form with four fields would be generated.  Without further 
+definition, each of these fields would be generated as a text entry that 
+need to match exactly with the values on the RETS Server.  For example, if
+the consumer entered the field for "StreetName"as "Main Street", only listings
+on that street would be returned.
+
+<br/><br/>
+
+This functionality is so basic and most searches conducted by the consumer 
+are actually performed as ranges.  I will now discuss how to specify ranges.
+At the bottom of the definition file, arrays are defined for this purpose.
+An example would be:
+
+<xmp>$ListPrice_FORM=array("Less than $150,0000"=>"150000-",
+                           "Between $150,000 and $200,000"=>"150000-200000",
+                           "Greater than $200,000"=>"200000+");
+</xmp>
+
+This means that the "ListPrice" ($ListPrice_FORM) field has three options:
+<ol>
+<li>Less than $150,000</li>
+<li>Between $150,000 and $200,000</li>
+<li>Greater than $200,000</li>
+</ol>
+
+If there is a statement that looked like this:
+<xmp>$ListingStatus_FORM=array("VISIBLE"=>"A");
+</xmp>
+
+It specifies that the query should set the defualt for "ListStatus"
+($ListStatus_FORM) to "A".  The key work "VISIBLE" allows the field to
+be displayed to the consumer.  If you set this to any other value, like
+"DEFAULT", the option will not appear to the consumer.
+
+<br/><br/>
+
+You must be sure that the definitions refer to elements that are part of 
+the "QUERY_ITEMS" definition.
+
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+    </table>
+    </td>
+    </tr>
+<!--         -->
+
+  </td>
+  </tr>
+
+
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- package configuration -->
+
+
+
+
+
+
+<tr>
+<td>
+
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+
+<td>
+<a href="./configurationGuide.html">Configuration Guide</a>
+</td>
+
+<td>
+<a href="./index.html">Table of Contents</a>
+</td>
+
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+
+
+
+
+
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,1233 @@
+<html>
+
+<head>
+<title>VieleRETS Documentation</title>
+<link rel="stylesheet" type="text/css" href="./resources/styles.css">
+</head>
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+
+<table border="0" cellspacing="10" cellpadding="0">
+
+
+
+
+
+<!-- header -->
+
+<tr align="left">
+<td>
+
+<table border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+
+<!-- logo -->
+<td>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td><img src="./resources/viele_logo.gif"></td></tr>
+<tr><td><br/></td></tr>
+</table>
+</td>
+<!-- logo -->
+
+<!-- document block -->
+<td>
+
+<table border="2" cellspacing="0" cellpadding="5">
+
+<tr>
+<td id="docheading">
+Project Name
+</td>
+<td id="doctext">
+VieleRETS 1.1 
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Publication Name
+</td>
+<td id="doctext">
+System Overview 
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Publication Date
+</td>
+<td id="doctext">
+April 2006
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Maintainer
+</td>
+<td id="doctext">
+mlesswing@realtors.org
+</td>
+</tr>
+
+</table>
+</td>
+<!-- document block -->
+
+</tr>
+
+</table>
+</td>
+
+</tr>
+
+<!-- header -->
+
+
+
+<tr>
+<td>
+
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+
+<td>
+<a href="./overview.html">System Overview</a>
+</td>
+
+<td>
+<a href="./index.html">Table of Contents</a>
+</td>
+
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+
+<!-- faq -->
+
+<tr>
+<td>
+
+<table border="0" cellspacing="10" cellpadding="0">
+
+<tr>
+<td id="sectionheading">
+6.0 Frequently Asked Questions (FAQ) 
+</td>
+</tr>
+
+<tr>
+<td>
+<table border="0" cellspacing="10" cellpadding="0">
+
+<tr>
+<td id="sectiontext">
+
+This is a compiled list of the most common problems with the package.  Please
+consult these before sending e-mail for support.  
+
+<ol>
+
+<li><a href="#q1">
+The connection to a MarketLinx server produces a "fclose(): 11 is not a valid 
+stream resource" warning.
+<br/><br/>
+</a></li>
+
+<li><a href="#q2"> 
+I am interested in displaying additional fields that are not selectable
+from the Administration Interface. I gather that I will need to parse these
+ additional fields out of the metadata returned from  the RETS server before
+ I can use these fields. How can I do this?
+<br/><br/>
+</a></li>
+
+<li><a href="#q5">
+I know that there are more listings in the MLS than I am seeing.  My queries 
+either stop part way through or return no results.  What is happening? 
+<br/><br/>
+</a></li>
+
+<li><a href="#q6">
+Not all of the listing pictures appear, or the primary picture is not the 
+correct picture.  What is wrong?
+<br/><br/>
+</a></li>
+
+<li><a href="#q7">
+How can I go about getting my results back sorted in order of listing price 
+or any other field?
+<br/><br/>
+</a></li>
+
+<li><a href="#q8">
+What should I ask my MLS to determine if I can use this package?
+<br/><br/>
+</a></li>
+
+<li><a href="#q9">
+I followed the instructions for the installation, but can't see any data.  
+What did I do wrong?
+<br/><br/>
+</a></li>
+
+<li><a href="#q10">
+After installation, I can hook up to the demo feed from Variman, but queries
+return "No Records Found".  
+What did I do wrong?
+<br/><br/>
+</a></li>
+
+<li><a href="#q11">
+After installation, I can't look at listing from a MarketLinx server.  I am 
+searching for a MLS number that I know is good.
+What did I do wrong?
+<br/><br/>
+</a></li>
+
+<li><a href="#q12">
+During installation against a server (MarketLinx or MRIS), I receive a warning
+about the server not being "RETS compliant".
+What's up with that?
+<br/><br/>
+</a></li>
+
+<li><a href="#q13">
+During installation against an Interealty server, I receive an error during
+that last step of Auto-Detection complaining about not being able to gather
+test data.
+Did I just damage the server?
+<br/><br/>
+</a></li>
+
+<li><a href="#q14">
+When working with a MarketLinx server, I try to search on a field like 
+"subdivision" with a value that has a space like "aspen grove".  No results
+come back but I know that there are listing that should be returning.
+Is your software broken?
+<br/><br/>
+</a></li>
+
+<li><a href="#q15">
+I an using Retriever (not VieleRETS) and tried to enter a query that should 
+have brought back all listings that have ever been entered in the MLS.  I got
+back some listings,  and the package generated a message at the bottom of the 
+page saying that I should refine my search.  Can't I see everything?
+<br/><br/>
+</a></li>
+
+<li><a href="#q16">
+I can't get batching to work. What can I do now?
+<br/><br/>
+</a></li>
+
+<li><a href="#q17">
+Why is it that I can log into some servers using GET versus POST and others
+I cannot.  I would like to use GET style requests, but not all RETS servers
+appear to support GET versus POST. What is going on?
+<br/><br/>
+</a></li>
+
+<li><a href="#q18">
+I am trying to connect to an InterRealty server and I get  error messages
+during Auto-Detection.  Will I be able to use VieleRETS?
+<br/><br/>
+</a></li>
+
+<li><a href="#q19">
+I can't get images from an MRIS server.  What is wrong with VieleRETS?
+</a></li>
+
+</ol>
+</td>
+</tr>
+
+<tr>
+  <td>
+<br/>
+<hr/>
+<br/>
+  </td>
+</tr>
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q1">&nbsp;1.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+The connection to a MarketLinx server produces a "fclose(): 11 is not a valid 
+stream resource" warning.
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+The server you are working with does not support the "keep-alive" capabilities
+of HTTP 1.1.  You should use the Administrative Interface, traverse to 
+Edit Source->Server Connection to set the KEEP_ALIVE_SERVER setting to "false".
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q2">&nbsp;2.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+<tr>
+  <td id="sectionheading">
+
+I am interested in displaying additional fields that are not selectable
+from the Administration Interface. I gather that I will need to parse these
+ additional fields out of the metadata returned  from  the  RETS server before
+ I can use these fields. How can I do this?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+The fields are server dependent.  The Admin tool sees all data fields avaiable 
+from the source you direct it to.  Our demo server has only a few.  Typically, 
+production MLS servers have between 170 and 350 fields.
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q5">&nbsp;3.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+I know that there are more listings in the MLS than I am seeing.  My queries
+either stop part way through or return no results.  What is happening? 
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+Your server may not be producing XML. MarketLinx servers are known to have this
+problem. The RETS Standard states that all transmissions between clients and 
+servers should be in XML format.
+
+<br/><br/>
+
+If you are not familiar with XML, it looks alot like HTML only you can create 
+custom tags.  A web page with HTML would normally look something like this:
+
+<xmp> <html>
+ <head>
+ <title>Example</title>
+ </head>
+ <body>
+ Hello there.
+ </body>
+ </html>
+</xmp>
+
+A RETS transmission in XML format looks something like this:
+
+<xmp> <RETS>
+ <COLUMNS> ListingID ListingPrice </COLUMNS>
+ <DATA> 12345 120000 </DATA>
+ <DATA> 56789 125000 </DATA>
+ </RETS>
+</xmp>
+
+In this example, listing 12345 has a listing price of $120,000.
+
+<br/><br/>
+
+OK, not for the problem with servers that do not produce XML.  Some fields, 
+like REMARKS, could have data that contains illegal XML characters (like 
+&gt; &lt; or &amp;).  This is a huge problem for standard componentry used 
+by software developers.  The tools they use to read standard XML responses 
+are called parsers.
+
+<br/><br/>
+
+Parsers expect servers too convert illegal characters to "escaped" 
+characters prior to transmission.  Here is an example:
+
+<br/><br/>
+
+If the REMARKS that the Agent entered were:
+
+<br/><br/>
+
+<var>A great house for &lt; $130K &amp; close to the train!</var>
+
+<br/><br/>
+
+The server should send this (if it was really doing RETS that is) as:
+
+<br/><br/>
+
+<var>A great house for &amp;lt; $130K &amp;amp; close to the train!</var>
+
+<br/><br/>
+
+To get around this problem, this package can read non-XML responses.  Set the 
+STANDARD_SERVER_RESPONSE setting to "false" for this server.
+
+  </td>
+</tr>
+
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q6">&nbsp;4.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+Not all of the listing pictures appear, or the primary picture is not the 
+correct picture.  What is wrong?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+Your server may not be RETS Compliant.  MarketLinx and old Rappatoni servers 
+are known to have this issue.
+
+The RETS standard is to begin image numbers at 1:
+
+<br/><br/>
+
+ 1 - primary photo<br/>
+ 2 - second photo<br/>
+ 3 - third photo<br/>
+ .....
+
+<br/><br/>
+
+Some servers are NOT compliant with the standard because they begin numbering 
+at zero:
+
+<br/><br/>
+
+ 0 - primary photo<br/>
+ 1- second photo<br/>
+ 2 - third photo<br/>
+ .....<br/>
+
+<br/>
+
+The MEDIA_LIST_ZERO_START setting should be "true" for this server.
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q7">&nbsp;5.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+How can I go about getting my results back sorted in order of listing price 
+or any other field?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+The RETS Standard has its own query language called DMQL.  It is similar in
+purpose to the SQL langauge used in tools like MS Access to return data from
+databases.  This is where the similarity stops though.  The structure of
+DMQL is very different.
+
+<br/><br/>
+
+DMQL has no provision for sorting or grouping data.  This package shows the data
+exactly as it comes from the server.
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q8">&nbsp;6.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+What should I ask my MLS to determine if I can use this package?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+The first question to ask your MLS is "Do you support RETS (Real Estate 
+Transaction Standard)?".  If the MLS answers "no" you cannot use this package.
+Because of RETS growing popularity, you might want to ask "When will you
+support RETS?".  There are a variety of tools that are now available that
+tacke advantage of RETS and it may ease the "cutting and pasting" efforts
+that are required to today.  If your MLS does not anything about the
+standard, you can direct them to 
+<a href="http://www.rets.org">Official Site</a> for more information.
+
+<br/><br/>
+
+If RETS is available, you should then ask for three pieces of information:
+
+<ol>
+
+<li>RETS URL - this will a text string that begins with http://......</li>
+
+<li>Account Name - Typically, it is the same as your MLS account, but it 
+could be different</li>
+
+<li>Account Password - Again, typically the password from your MLS account,
+but it could be different</li>
+
+</ol>
+
+After obtaining this information, you can proceed with either the 
+<a href="./quickInstallation.html">Quick Installation</a> 
+instructions or the more detailed 
+<a href="./installationGuide.html">Step-by-Step</a> 
+instruction set.
+ 
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q9">&nbsp;7.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+I followed the instructions for the installation, but can't see any data.  
+What did I do wrong?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+It could any one of a number of things.  When you hook up to a server, the 
+"Auto-Detection" logic tries to present you all of the options that are available.
+The order is:
+
+<ol>
+<li>Connect</li>
+<li>Resource</li>
+<li>Class</li>
+</ol>
+
+CRT operates a demonstration RETS server to help you get this package up faster.
+The name of the server is Variman.  Some MLS operations run Variman also.  In 
+real world use, you would hook up to your MLS.
+
+<br/><br/>
+
+If you fail on the "connect" to the demo server, you might want to check your
+connection to the internet or the server settings.   
+
+<br/><br/>
+
+If the "connect" is OK, we need to examine the next two areas.  The demo server
+only has data in for the Resource called "Property" and the Class called 
+"ResidentialProperty".
+
+<br/><br/>
+
+When presenting all of the options of a server, this package does not know which
+options are valid.  In the case of the demo server. all Resources and Classes
+are show.  By pure luck, the last Resource shown is "Property".  Unfortunately,
+the last Class shown is MUL (Multiple Unit).  Only the Residentailproperty
+(Residential) class has data.  
+
+<br/><br/>
+
+If you connect to the the demo server, use a Resource of "Property" and a Class
+of "ResidentialProperty".
+
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q10">8.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+After installation, I can hook up to the demo feed from Variman, but queries
+return "No Records Found".  
+What did I do wrong?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+The "Auto-Detection" routine that is run when you hook up a new source returns
+a list of all valid Resources and Classes that the server supports.  These
+combinations are supported by the server, but it doesn't guarantee that there
+is data there.
+
+<br/><br/>
+
+The demo server only has data loaded for the resource called Property and the
+class called "ResidentialProperty".
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q11">9.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+After installation, I can't look at listing from a MarketLinx server.  I am 
+searching for a MLS number that I know is good.
+What did I do wrong?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+A bug in MarketLinx only handles a size of 1024 characters during GET 
+operations.
+
+<br/><br/>
+
+There are two things you can do to correct this situation:
+
+<ol>
+
+<li>From the Administration Interface, specify fewer columns to be displayed
+in the the Summary, Detail and Gallery views.  Fewer than 70 columns appears
+to be the threshold.  This is also the approach if you are using a version
+of the package that predates Version 2.0.6</li>
+
+<li>If you really need all of the columns, turn the define for POST_REQUESTS
+variable to "true".  You can do this from the 
+Administration Interface->Edit Source->Server Connection 
+panel.  This will allow all columns to be viewed.</li>
+
+</ol>
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q12">10.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+During installation against a server (MarketLinx or MRIS), I receive a warning
+about the server not being "RETS compliant".
+What's up with that?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+As of April 2005, the RETS Working Group (the standards body behind the 
+RETS standard) adopted Version 1.7 of the specification.  The RETS standard
+states that the current version and one version back should be supported.  The
+two current versions of the specification are 1.5 and 1.7.  You should report
+this situation to the MLS.
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q13">11.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+During installation against an Interealty server, I receive an error during
+that last step of Auto-Detection complaining about not being able to gather
+test data.
+Did I damage the server?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+No damage done.  There appears to be a bug in the Interealty RETS server when 
+requesting integer-based fields greater than a specified value.  The "sysid"
+used by the server is declared as "Int" for integer.
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q14">12.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+When working with a MarketLinx server, I try to search on a field like 
+"subdivision" with a value that has a space like "aspen grove".  No results
+come back but I know that there are listing that should be returning.
+Is this package broken?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+Not really, but you will have to change a configuration paramter.  There 
+appears that MarketLinx server do not accept HTTP requests in URL Encoded
+format.  You can control this by setting the ENCODE_REQUESTS setting to
+"false" from 
+Administration Interface->Edit Source->Server Connection 
+.
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q15">13.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+I an using Retriever (not VieleRETS) and tried to enter a query that should 
+have brought back all listings that have ever been entered in the MLS.  I got
+back some listings,  and the package generated a message at the bottom of the 
+page saying that I should refine my search.  Can't I see everything?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+Yes, Retriever can see everything that is in the MLS RETS server if the 
+server supports Batch processing.  If not, only 99 listings are brought back 
+for a couple of reasons:
+
+<ol>
+
+<li>Huge queries are a burden on RETS Servers.</li>
+
+<li>Huge queries will probably freeze the browser of the consumer</li>
+
+<li>Huge queries will make the consumer browser apprae unresponsive</li>
+
+</ol>
+
+This package is a Free Open Source project though and the governer can be
+removed if you really want any of the above conditions.  It is better to
+refine the search by adding more conditions.
+
+<br/><br/>
+VieleRETS does not have this limitation.
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q16">14.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+I can't get batching to work. What can I do now?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+Some RETS servers do not support the Limit and Offset options specified by 
+the RETS Standard.  this package uses these two options are used to create 
+"batches" of results.  Without them, all results are gathered with a single
+batch and simulates the server capability. 
+
+<br/><br/>
+
+Some debate exists over if the current RETS standard requires offset to be 
+supported, without this we have to fall back to a slower client side 
+pagination.  The Auto-Detection logic tries to determine if the server 
+supports theses features.
+
+<br/><br/>
+
+The following servers have been reported to have the problem.
+
+<ol>
+
+<li>Interealty</li>
+
+<li>MarketLinx</li>
+
+<li>Rappatoni (old 1.0 server)</li>
+
+</ol>
+
+The Auto-Detection logic could be flawed though.  If you think that your server
+is actually RETS Compliant, you can override the detected values in the 
+Administration Interface. 
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+
+<!-- DETAIL -->
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q17">15.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+Why is it that I can log into some servers using GET versus POST and others
+I cannot.  I would like to use GET style requests, but not all RETS servers
+appear to support GET versus POST. What is going on?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+The authentication used by some RETS servers is based on Microsoft libraries
+that are known to incorrectly formulate Digest Authentication responses.
+
+<br/><br/>
+
+Digest Authentication is a standard documented by RFC 1617.  Part of the 
+response to a request is including a "uri".  If you were looking for the
+foloowing with a browser:
+
+<xmp>http://www.crt.realtors.org</xmp>
+
+then the uri would be:
+
+<xmp>www.crt.realtors.org</xmp>
+
+As another example, if you were looking for the following:
+
+<xmp>http://demo.crt.realtors.org/rets/login</xmp>
+
+then the uri would be:
+
+<xmp>demo.crt.realtors.org/rets/login</xmp>
+
+The next example highlights the problem and has to do with the passing of
+parameters.  Now lets look for the following:
+
+<xmp>http://broken.rets.org/search?Format=COMPACT
+
+The correct uri per RFC 1617 is:
+
+<xmp>broken.rets.org/search?Format=COMPACT</xmp>
+
+Servers that use Microsoft libraries incorrectly assume the following:
+
+<xmp>broken.rets.org/search</xmp>
+
+Notice that the arguments are missing.  If you are using a RETS client built
+with Micosoft libraries you will experience the opposite effect.  You will be 
+able to connect to Microsoft-based servers but not non-Microsoft servers.
+
+<br/><br/>
+
+Microsoft was notified of the issue (publically) in 2002 at which time a fix
+was promised.  The fix has still not been issued.
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+<!-- DETAIL -->
+ 
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q18">16.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+I am trying to connect to an InterRealty server and I get  error messages
+during Auto-Detection.  Will I be able to use VieleRETS?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+The metadata of InterRealty servers specifies the "sysuid" column as being
+unique and also sets this column to be not "selectable".  This is problematic
+for the Auto-Detectin logic.  The package should try to use the MLNumber field
+to perform sensing logic.
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+<!-- DETAIL -->
+ 
+<tr>
+  <td>
+    <table border="0" cellpadding = "10">
+      <tr>
+        <td id="sectionheading">
+<a name="q19">17.</a>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+ 
+ 
+<tr>
+  <td id="sectionheading">
+
+I can't get images from an MRIS server.  What is wrong with VieleRETS?
+
+  </td>
+</tr>
+<tr>
+  <td id="sectiontext">
+
+Nothing is wrong with VieleRETS.  MRIS dows not support images through RETS.
+
+  </td>
+</tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+<!-- DETAIL -->
+ 
+
+</table>
+
+</td>
+</tr>
+</table>
+
+
+<!-- faq -->
+
+
+
+<tr>
+<td>
+
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+
+<td>
+<a href="./overview.html">System Overview</a>
+</td>
+
+<td>
+<a href="./index.html">Table of Contents</a>
+</td>
+
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+
+
+</table>
+
+</body>
+
+</html>

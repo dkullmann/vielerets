@@ -1,0 +1,16 @@
+
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-LOOKUP_TYPE Resource="Property" Lookup="Status" Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	MetadataEntryID	LongValue	ShortValue	Value	</COLUMNS>
+<DATA>	S	Sold	S	S	</DATA>
+<DATA>	0	Off Market	0	O	</DATA>
+<DATA>	A	Active	A	A	</DATA>
+<DATA>	W	Withdrawn	W	W	</DATA>
+<DATA>	U	Under Contract	U	U	</DATA>
+<DATA>	C	Closed	C	C	</DATA>
+<DATA>	T	Temp Off Market	T	T	</DATA>
+<DATA>	P	Pending	P	P	</DATA>
+<DATA>	L	Leased	L	L	</DATA>
+<DATA>	X	Expired	X	X	</DATA>
+</METADATA-LOOKUP_TYPE>
+</RETS>

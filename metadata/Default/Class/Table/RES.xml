@@ -1,0 +1,31 @@
+
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-TABLE Resource="Property" Class="RES" Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	MetadataEntryID	SystemName	StandardName	LongName	DBName	ShortName	MaximumLength	DataType	Precision	Searchable	Interpretation	Alignment	UseSeparator	EditMaskID	LookupName	MaxSelect	Units	Index	Minimum	Maximum	Default	Required	SearchHelpID	Unique	ModTimeStamp	ForeignKeyName	ForeignField	KeyQuery	KeySelect	InKeyIndex	</COLUMNS>
+<DATA>	Status	Status	ListingStatus	Listing Status	status	Status	12	Character	0	1	Lookup	Left	0		Status	0		0	0	0	10	1		0	0			0	0	0	</DATA>
+<DATA>	Rooms	Rooms	TotalRooms	TotalRooms	rooms	Rooms	8	Int	0	1		Left	0			0		0	0	0	20	0		0	0			0	0	0	</DATA>
+<DATA>	ZipCode	ZipCode	PostalCode	Zip Code	zip	Zip	10	Character	0	0		Left	0			0		0	0	0	16	0		0	0			0	0	0	</DATA>
+<DATA>	City	City	City	City	city	City	24	Character	0	1		Left	0			0		0	0	0	13	0		0	0			0	0	0	</DATA>
+<DATA>	ContractDate	ContractDate	ContractDate	Contract Date	contract_date	Con Date	10	Date	0	1		Left	0			0		0	0	0	2	0	DATE_SEARCH_HELP	0	0			0	0	0	</DATA>
+<DATA>	ClosePrice	ClosePrice	ClosePrice	Close Price	close_price	Cls Pr	8	Int	0	1	Currency	Right	1			0		0	14	0	4	0		0	0			0	0	0	</DATA>
+<DATA>	County	County	County	County	county	County	24	Character	0	1		Left	0			0		0	0	0	14	0		0	0			0	0	0	</DATA>
+<DATA>	YearBuilt	YearBuilt	YearBuilt	YearBuilt	year_built	YearBuilt	4	Int	0	1		Left	0			0		0	0	0	17	0		0	0			0	0	0	</DATA>
+<DATA>	Garage	Garage	Garage	Garage	garage	Garage	8	Int	0	1		Left	0			0		0	0	0	18	0		0	0			0	0	0	</DATA>
+<DATA>	LivingArea	LivingArea	LivingArea	LivingArea	living_area	LivingArea	8	Int	0	1		Left	0			0		0	0	0	19	0		0	0			0	0	0	</DATA>
+<DATA>	StreetNumber	StreetNumber	StreetNumber	Street Number	street_number	St Num	12	Character	0	0		Left	0			0		0	0	0	10	0		0	0			0	0	0	</DATA>
+<DATA>	StreetDirection	StreetDirection	StreetDirPrefix	Street Direction Prefix	street_direction	StreetDir	12	Character	0	1		Left	0			0		0	0	0	11	0		0	0			0	0	0	</DATA>
+<DATA>	Board	Board	Board	Local Board	board	Board	24	Character	0	1		Left	0			0		0	0	0	7	0		0	0			0	0	0	</DATA>
+<DATA>	ModificationTimestamp	ModificationTimestamp	ModificationTimestamp	Modification Timestamp	modification_timestamp	ModTS	24	DateTime	0	1		Left	0			0		0	0	0	3	0		0	0			0	0	0	</DATA>
+<DATA>	StreetName	StreetName	StreetName	Street Name	street_name	St Nam	24	Character	0	1		Left	0			0		0	0	0	12	0		0	0			0	0	0	</DATA>
+<DATA>	ListDate	ListDate	ListDate	Listing Date	list_date	Lst Dt	10	Date	0	1		Left	0			0		0	0	0	2	0	DATE_SEARCH_HELP	0	0			0	0	0	</DATA>
+<DATA>	AgentID	AgentID	AgentID	Agent ID	agent_id	aid	12	Int	0	1		Left	0			0		0	0	0	5	0		0	0	ResPropertyAgent		0	0	0	</DATA>
+<DATA>	Unit	Unit	UnitNumber	Unit Number	unit	Un Num	12	Character	0	0		Left	0			0		0	0	0	10	0		0	0			0	0	0	</DATA>
+<DATA>	State	State	StateOrProvince	State	state	State	24	Character	0	1		Left	0			0		0	0	0	15	0		0	0			0	0	0	</DATA>
+<DATA>	SqFt	SqFt		Square Footage	sqft	SqrFt	15	Decimal	5	1		Left	0			0	SqFt	0	0	0	21	0		0	0			0	0	0	</DATA>
+<DATA>	Bedrooms	Bedrooms	Beds	Bedrooms	beds	Beds	8	Int	0	1		Left	0			0		0	0	0	9	0		0	0			0	0	0	</DATA>
+<DATA>	ListPrice	ListPrice	ListPrice	Listing Price	list_price	Lst Pr	8	Int	0	1	Currency	Right	1			0		0	14	0	4	0		0	0			0	0	0	</DATA>
+<DATA>	ListingID	ListingID	ListingID	Listing ID	id	id	40	Int	0	1	Number	Left	0			0		0	1	0	1	0	LN_SEARCH_HELP	1	0			0	0	0	</DATA>
+<DATA>	Baths	Baths	Baths	Baths Total	baths	Baths	8	Int	0	1		Left	0			0		0	0	0	8	0		0	0			0	0	0	</DATA>
+<DATA>	CloseDate	CloseDate	CloseDate	Close Date	close_date	Cls Dt	10	Date	0	1		Left	0			0		0	0	0	2	0	DATE_SEARCH_HELP	0	0			0	0	0	</DATA>
+</METADATA-TABLE>
+</RETS>

@@ -1,0 +1,1265 @@
+
+----------------------------
+ Debug Output for VieleRETS 
+----------------------------
+
+
+[January 9, 2010 13:05:57 UTC] CREATE new Request for INITIAL_LOGIN
+[January 9, 2010 13:05:57 UTC] SET socket - failed
+[January 9, 2010 13:05:57 UTC] SET cookies - failed
+[January 9, 2010 13:05:57 UTC] SET credential failed because no credential is present
+[January 9, 2010 13:05:57 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:57 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:57 UTC] SUCCESS on open
+[January 9, 2010 13:05:57 UTC] SENDING ...
+POST /rets/login HTTP/1.1
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Pragma: no-cache
+Content-Length: 0
+
+
+[January 9, 2010 13:05:57 UTC] RESPONSE ...
+HTTP/1.1 401 Unauthorized
+Set-Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1; Path=/
+WWW-Authenticate: Digest realm="RETS Server", qop="auth", nonce="1082458331bb1a11e674cdd16402425c", opaque="a23eaac6cbf7a92dfac1ba3ee6c30aff"
+Content-Type: text/html;charset=ISO-8859-1
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:57 UTC] READING the PAYLOAD as Chunked
+[January 9, 2010 13:05:57 UTC] PAYLOAD ...
+<html><head><title>Apache Tomcat/4.1.31 - Error report</title><STYLE><!--H1{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} H3{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} BODY{font-family : sans-serif,Arial,Tahoma;color : black;background-color : white;} B{color : white;background-color : #0086b2;} HR{color : #0086b2;} --></STYLE> </head><body><h1>HTTP Status 401 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>This request requires HTTP authentication ().</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/4.1.31</h3></body></html>
+[January 9, 2010 13:05:57 UTC] GENERATE a credential
+[January 9, 2010 13:05:57 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:57 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:57 UTC] SENDING ...
+POST /rets/login HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="1082458331bb1a11e674cdd16402425c", uri="/rets/login", qop="auth", nc=00000001, cnonce="0a4f113b", response="9473e02e43efd08c368aa9a1be261fd0", opaque="a23eaac6cbf7a92dfac1ba3ee6c30aff"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Length: 0
+
+
+[January 9, 2010 13:05:57 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-Type: text/xml
+Content-Length: 564
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:57 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:57 UTC] PAYLOAD ...
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<RETS-RESPONSE>
+Broker = 
+MemberName = Joe Schmoe
+MetadataVersion = 1.00.00001
+MinMetadataVersion = 1.00.00001
+User = Joe,NULL,NULL,NULL
+Login = http://demo.crt.realtors.org:6103/rets/login
+Logout = http://demo.crt.realtors.org:6103/rets/logout
+Search = http://demo.crt.realtors.org:6103/rets/search
+GetMetadata = http://demo.crt.realtors.org:6103/rets/getMetadata
+GetObject = http://demo.crt.realtors.org:6103/rets/getObject
+Balance = 194,962.17
+TimeoutSeconds = 1800
+</RETS-RESPONSE>
+</RETS>
+
+[January 9, 2010 13:05:57 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:57 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:57 UTC] SAVE the credential for [POST /rets/login]
+[January 9, 2010 13:05:57 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:57 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:57 UTC] CREATE new Request for GETMETADATA
+[January 9, 2010 13:05:57 UTC] SET socket - succeded
+[January 9, 2010 13:05:57 UTC] SET cookies - succeded
+[January 9, 2010 13:05:57 UTC] LOOK for an existing credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:57 UTC] CREATE a new credential
+[January 9, 2010 13:05:57 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:57 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:57 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:57 UTC] SENDING ...
+POST /rets/getMetadata HTTP/1.1
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 42
+
+Type=METADATA-RESOURCE&ID=0&Format=COMPACT
+[January 9, 2010 13:05:57 UTC] RESPONSE ...
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Digest realm="RETS Server", qop="auth", nonce="da81d2f20a95107065392d058b5e8eeb", opaque="a47bc2e1e071fed1f4987396ecc9e28e"
+Content-Type: text/html;charset=ISO-8859-1
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:57 UTC] READING the PAYLOAD as Chunked
+[January 9, 2010 13:05:57 UTC] PAYLOAD ...
+<html><head><title>Apache Tomcat/4.1.31 - Error report</title><STYLE><!--H1{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} H3{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} BODY{font-family : sans-serif,Arial,Tahoma;color : black;background-color : white;} B{color : white;background-color : #0086b2;} HR{color : #0086b2;} --></STYLE> </head><body><h1>HTTP Status 401 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>This request requires HTTP authentication ().</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/4.1.31</h3></body></html>
+[January 9, 2010 13:05:57 UTC] GENERATE a credential
+[January 9, 2010 13:05:57 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:57 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:57 UTC] SENDING ...
+POST /rets/getMetadata HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="da81d2f20a95107065392d058b5e8eeb", uri="/rets/getMetadata", qop="auth", nc=00000001, cnonce="0a4f113b", response="447e495ffb4be383d158d7067660d49b", opaque="a47bc2e1e071fed1f4987396ecc9e28e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 42
+
+Type=METADATA-RESOURCE&ID=0&Format=COMPACT
+[January 9, 2010 13:05:57 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-ID: METADATA-RESOURCE
+Content-Type: text/xml
+Content-Length: 1458
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:57 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:57 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-RESOURCE Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	ResourceID	StandardName	VisibleName	Description	KeyField	ClassCount	ClassVersion	ClassDate	ObjectVersion	ObjectDate	SearchHelpVersion	SearchHelpDate	EditMaskVersion	EditMaskDate	LookupVersion	LookupDate	UpdateHelpVersion	UpdateHelpDate	ValidationExpressionVersion	ValidationExpressionDate	ValidationLookupVersion	ValidationLookupDate	ValidationExternalVersion	ValidationExternalDate	</COLUMNS>
+<DATA>	Property	Property	Property	Property Database	ListingID	2	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	</DATA>
+<DATA>	Agent	Agent	Agent	Agent Database	AgentID	1	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	</DATA>
+</METADATA-RESOURCE>
+</RETS>
+
+[January 9, 2010 13:05:57 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:57 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:57 UTC] SAVE the credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:57 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:57 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:57 UTC] CREATE new Request for GETMETADATA
+[January 9, 2010 13:05:57 UTC] SET socket - succeded
+[January 9, 2010 13:05:57 UTC] SET cookies - succeded
+[January 9, 2010 13:05:57 UTC] LOOK for an existing credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:57 UTC] REUSE an existing credential
+[January 9, 2010 13:05:57 UTC] SET credential - succeeded
+[January 9, 2010 13:05:57 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:57 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:57 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:57 UTC] SENDING ...
+POST /rets/getMetadata HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="da81d2f20a95107065392d058b5e8eeb", uri="/rets/getMetadata", qop="auth", nc=00000002, cnonce="0a4f113b", response="ee8097a3f9eded3091a701284d786466", opaque="a47bc2e1e071fed1f4987396ecc9e28e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 46
+
+Type=METADATA-CLASS&ID=Property&Format=COMPACT
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-ID: METADATA-CLASS
+Content-Type: text/xml
+Content-Length: 723
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-CLASS Resource="Property" Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	ClassName	StandardName	VisibleName	Description	TableVersion	TableDate	UpdateVersion	UpdateDate	ClassTimeStamp	DeletedFlagField	DeletedFlagValue	HasKeyIndex	</COLUMNS>
+<DATA>	COM		Commercial	Commercial Property	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	ModificationTimestamp			0	</DATA>
+<DATA>	RES	ResidentialProperty	Single Family	Single Family Residential	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	ModificationTimestamp			0	</DATA>
+</METADATA-CLASS>
+</RETS>
+
+[January 9, 2010 13:05:58 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:58 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:58 UTC] SAVE the credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:58 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:58 UTC] CREATE new Request for GETMETADATA
+[January 9, 2010 13:05:58 UTC] SET socket - succeded
+[January 9, 2010 13:05:58 UTC] SET cookies - succeded
+[January 9, 2010 13:05:58 UTC] LOOK for an existing credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] REUSE an existing credential
+[January 9, 2010 13:05:58 UTC] SET credential - succeeded
+[January 9, 2010 13:05:58 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/getMetadata HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="da81d2f20a95107065392d058b5e8eeb", uri="/rets/getMetadata", qop="auth", nc=00000003, cnonce="0a4f113b", response="efb6e0f3b530c8dcc8c33602617b3ff5", opaque="a47bc2e1e071fed1f4987396ecc9e28e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 42
+
+Type=METADATA-RESOURCE&ID=0&Format=COMPACT
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-ID: METADATA-RESOURCE
+Content-Type: text/xml
+Content-Length: 1458
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-RESOURCE Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	ResourceID	StandardName	VisibleName	Description	KeyField	ClassCount	ClassVersion	ClassDate	ObjectVersion	ObjectDate	SearchHelpVersion	SearchHelpDate	EditMaskVersion	EditMaskDate	LookupVersion	LookupDate	UpdateHelpVersion	UpdateHelpDate	ValidationExpressionVersion	ValidationExpressionDate	ValidationLookupVersion	ValidationLookupDate	ValidationExternalVersion	ValidationExternalDate	</COLUMNS>
+<DATA>	Property	Property	Property	Property Database	ListingID	2	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	</DATA>
+<DATA>	Agent	Agent	Agent	Agent Database	AgentID	1	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	</DATA>
+</METADATA-RESOURCE>
+</RETS>
+
+[January 9, 2010 13:05:58 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:58 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:58 UTC] SAVE the credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:58 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:58 UTC] CREATE new Request for GETMETADATA
+[January 9, 2010 13:05:58 UTC] SET socket - succeded
+[January 9, 2010 13:05:58 UTC] SET cookies - succeded
+[January 9, 2010 13:05:58 UTC] LOOK for an existing credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] REUSE an existing credential
+[January 9, 2010 13:05:58 UTC] SET credential - succeeded
+[January 9, 2010 13:05:58 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/getMetadata HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="da81d2f20a95107065392d058b5e8eeb", uri="/rets/getMetadata", qop="auth", nc=00000004, cnonce="0a4f113b", response="3288e78ac72e6543df0f4a6f40a08366", opaque="a47bc2e1e071fed1f4987396ecc9e28e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 47
+
+Type=METADATA-OBJECT&ID=Property&Format=COMPACT
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-ID: METADATA-OBJECT
+Content-Type: text/xml
+Content-Length: 1131
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-OBJECT Resource="Property" Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	MetadataEntryID	ObjectType	MimeType	VisibleName	Description	ObjectTimeStamp	ObjectCount	</COLUMNS>
+<DATA>	BrandedPhoto	BrandedPhoto	image/jpeg	Full, Branded Photos	A branded image image (Not covered by the RETS Specification)			</DATA>
+<DATA>	BrandedThumbnailPhoto	BrandedThumbnail	image/jpeg	Small, Branded Photos	A branded lower-resolution image (Not covered by the RETS Specif			</DATA>
+<DATA>	EnlargedPhoto	Enlarged	image/jpeg	Enlarged  Photos	An enlarged image (Not covered by the RETS Specification)			</DATA>
+<DATA>	ThumbnailPhoto	Thumbnail	image/jpeg	Small Photos	A lower-resolution image related to the element defined by the r			</DATA>
+<DATA>	BrandedEnlargedPhoto	BrandedEnlarged	image/jpeg	Enlarged, Branded Photos	A branded and enlarged image (Not covered by the RETS Specificat			</DATA>
+<DATA>	Photo	Photo	image/jpeg	Full Photos	A representation image related to the element defined by the res			</DATA>
+</METADATA-OBJECT>
+</RETS>
+
+[January 9, 2010 13:05:58 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:58 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:58 UTC] SAVE the credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:58 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:58 UTC] CREATE new Request for GETMETADATA
+[January 9, 2010 13:05:58 UTC] SET socket - succeded
+[January 9, 2010 13:05:58 UTC] SET cookies - succeded
+[January 9, 2010 13:05:58 UTC] LOOK for an existing credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] REUSE an existing credential
+[January 9, 2010 13:05:58 UTC] SET credential - succeeded
+[January 9, 2010 13:05:58 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/getMetadata HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="da81d2f20a95107065392d058b5e8eeb", uri="/rets/getMetadata", qop="auth", nc=00000005, cnonce="0a4f113b", response="7ced1193e01bb593a85b4f90dd0749bf", opaque="a47bc2e1e071fed1f4987396ecc9e28e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 46
+
+Type=METADATA-CLASS&ID=Property&Format=COMPACT
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-ID: METADATA-CLASS
+Content-Type: text/xml
+Content-Length: 723
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-CLASS Resource="Property" Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	ClassName	StandardName	VisibleName	Description	TableVersion	TableDate	UpdateVersion	UpdateDate	ClassTimeStamp	DeletedFlagField	DeletedFlagValue	HasKeyIndex	</COLUMNS>
+<DATA>	COM		Commercial	Commercial Property	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	ModificationTimestamp			0	</DATA>
+<DATA>	RES	ResidentialProperty	Single Family	Single Family Residential	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	ModificationTimestamp			0	</DATA>
+</METADATA-CLASS>
+</RETS>
+
+[January 9, 2010 13:05:58 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:58 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:58 UTC] SAVE the credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:58 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:58 UTC] CREATE new Request for GETMETADATA
+[January 9, 2010 13:05:58 UTC] SET socket - succeded
+[January 9, 2010 13:05:58 UTC] SET cookies - succeded
+[January 9, 2010 13:05:58 UTC] LOOK for an existing credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] REUSE an existing credential
+[January 9, 2010 13:05:58 UTC] SET credential - succeeded
+[January 9, 2010 13:05:58 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/getMetadata HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="da81d2f20a95107065392d058b5e8eeb", uri="/rets/getMetadata", qop="auth", nc=00000006, cnonce="0a4f113b", response="c255bd5494e729a2443df64f65e708a8", opaque="a47bc2e1e071fed1f4987396ecc9e28e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 52
+
+Type=METADATA-TABLE&ID=Property%3ARES&Format=COMPACT
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-ID: METADATA-TABLE
+Content-Type: text/xml
+Content-Length: 3706
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-TABLE Resource="Property" Class="RES" Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	MetadataEntryID	SystemName	StandardName	LongName	DBName	ShortName	MaximumLength	DataType	Precision	Searchable	Interpretation	Alignment	UseSeparator	EditMaskID	LookupName	MaxSelect	Units	Index	Minimum	Maximum	Default	Required	SearchHelpID	Unique	ModTimeStamp	ForeignKeyName	ForeignField	KeyQuery	KeySelect	InKeyIndex	</COLUMNS>
+<DATA>	Status	Status	ListingStatus	Listing Status	status	Status	12	Character	0	1	Lookup	Left	0		Status	0		0	0	0	10	1		0	0			0	0	0	</DATA>
+<DATA>	Rooms	Rooms	TotalRooms	TotalRooms	rooms	Rooms	8	Int	0	1		Left	0			0		0	0	0	20	0		0	0			0	0	0	</DATA>
+<DATA>	ZipCode	ZipCode	PostalCode	Zip Code	zip	Zip	10	Character	0	0		Left	0			0		0	0	0	16	0		0	0			0	0	0	</DATA>
+<DATA>	City	City	City	City	city	City	24	Character	0	1		Left	0			0		0	0	0	13	0		0	0			0	0	0	</DATA>
+<DATA>	ContractDate	ContractDate	ContractDate	Contract Date	contract_date	Con Date	10	Date	0	1		Left	0			0		0	0	0	2	0	DATE_SEARCH_HELP	0	0			0	0	0	</DATA>
+<DATA>	ClosePrice	ClosePrice	ClosePrice	Close Price	close_price	Cls Pr	8	Int	0	1	Currency	Right	1			0		0	14	0	4	0		0	0			0	0	0	</DATA>
+<DATA>	County	County	County	County	county	County	24	Character	0	1		Left	0			0		0	0	0	14	0		0	0			0	0	0	</DATA>
+<DATA>	YearBuilt	YearBuilt	YearBuilt	YearBuilt	year_built	YearBuilt	4	Int	0	1		Left	0			0		0	0	0	17	0		0	0			0	0	0	</DATA>
+<DATA>	Garage	Garage	Garage	Garage	garage	Garage	8	Int	0	1		Left	0			0		0	0	0	18	0		0	0			0	0	0	</DATA>
+<DATA>	LivingArea	LivingArea	LivingArea	LivingArea	living_area	LivingArea	8	Int	0	1		Left	0			0		0	0	0	19	0		0	0			0	0	0	</DATA>
+<DATA>	StreetNumber	StreetNumber	StreetNumber	Street Number	street_number	St Num	12	Character	0	0		Left	0			0		0	0	0	10	0		0	0			0	0	0	</DATA>
+<DATA>	StreetDirection	StreetDirection	StreetDirPrefix	Street Direction Prefix	street_direction	StreetDir	12	Character	0	1		Left	0			0		0	0	0	11	0		0	0			0	0	0	</DATA>
+<DATA>	Board	Board	Board	Local Board	board	Board	24	Character	0	1		Left	0			0		0	0	0	7	0		0	0			0	0	0	</DATA>
+<DATA>	ModificationTimestamp	ModificationTimestamp	ModificationTimestamp	Modification Timestamp	modification_timestamp	ModTS	24	DateTime	0	1		Left	0			0		0	0	0	3	0		0	0			0	0	0	</DATA>
+<DATA>	StreetName	StreetName	StreetName	Street Name	street_name	St Nam	24	Character	0	1		Left	0			0		0	0	0	12	0		0	0			0	0	0	</DATA>
+<DATA>	ListDate	ListDate	ListDate	Listing Date	list_date	Lst Dt	10	Date	0	1		Left	0			0		0	0	0	2	0	DATE_SEARCH_HELP	0	0			0	0	0	</DATA>
+<DATA>	AgentID	AgentID	AgentID	Agent ID	agent_id	aid	12	Int	0	1		Left	0			0		0	0	0	5	0		0	0	ResPropertyAgent		0	0	0	</DATA>
+<DATA>	Unit	Unit	UnitNumber	Unit Number	unit	Un Num	12	Character	0	0		Left	0			0		0	0	0	10	0		0	0			0	0	0	</DATA>
+<DATA>	State	State	StateOrProvince	State	state	State	24	Character	0	1		Left	0			0		0	0	0	15	0		0	0			0	0	0	</DATA>
+<DATA>	SqFt	SqFt		Square Footage	sqft	SqrFt	15	Decimal	5	1		Left	0			0	SqFt	0	0	0	21	0		0	0			0	0	0	</DATA>
+<DATA>	Bedrooms	Bedrooms	Beds	Bedrooms	beds	Beds	8	Int	0	1		Left	0			0		0	0	0	9	0		0	0			0	0	0	</DATA>
+<DATA>	ListPrice	ListPrice	ListPrice	Listing Price	list_price	Lst Pr	8	Int	0	1	Currency	Right	1			0		0	14	0	4	0		0	0			0	0	0	</DATA>
+<DATA>	ListingID	ListingID	ListingID	Listing ID	id	id	40	Int	0	1	Number	Left	0			0		0	1	0	1	0	LN_SEARCH_HELP	1	0			0	0	0	</DATA>
+<DATA>	Baths	Baths	Baths	Baths Total	baths	Baths	8	Int	0	1		Left	0			0		0	0	0	8	0		0	0			0	0	0	</DATA>
+<DATA>	CloseDate	CloseDate	CloseDate	Close Date	close_date	Cls Dt	10	Date	0	1		Left	0			0		0	0	0	2	0	DATE_SEARCH_HELP	0	0			0	0	0	</DATA>
+</METADATA-TABLE>
+</RETS>
+
+[January 9, 2010 13:05:58 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:58 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:58 UTC] SAVE the credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:58 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:58 UTC] CREATE new Request for GETMETADATA
+[January 9, 2010 13:05:58 UTC] SET socket - succeded
+[January 9, 2010 13:05:58 UTC] SET cookies - succeded
+[January 9, 2010 13:05:58 UTC] LOOK for an existing credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] REUSE an existing credential
+[January 9, 2010 13:05:58 UTC] SET credential - succeeded
+[January 9, 2010 13:05:58 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/getMetadata HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="da81d2f20a95107065392d058b5e8eeb", uri="/rets/getMetadata", qop="auth", nc=00000007, cnonce="0a4f113b", response="43f424ef9fd880ebf6da02e74a35c0a8", opaque="a47bc2e1e071fed1f4987396ecc9e28e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 47
+
+Type=METADATA-LOOKUP&ID=Property&Format=COMPACT
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-ID: METADATA-LOOKUP
+Content-Type: text/xml
+Content-Length: 360
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-LOOKUP Resource="Property" Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	MetadataEntryID	LookupName	VisibleName	Version	Date	</COLUMNS>
+<DATA>	Status	Status	Listing Status	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	</DATA>
+</METADATA-LOOKUP>
+</RETS>
+
+[January 9, 2010 13:05:58 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:58 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:58 UTC] SAVE the credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:58 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:58 UTC] CREATE new Request for GETMETADATA
+[January 9, 2010 13:05:58 UTC] SET socket - succeded
+[January 9, 2010 13:05:58 UTC] SET cookies - succeded
+[January 9, 2010 13:05:58 UTC] LOOK for an existing credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] REUSE an existing credential
+[January 9, 2010 13:05:58 UTC] SET credential - succeeded
+[January 9, 2010 13:05:58 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/getMetadata HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="da81d2f20a95107065392d058b5e8eeb", uri="/rets/getMetadata", qop="auth", nc=00000008, cnonce="0a4f113b", response="1ca7ca6c7e029647b1f12a79302b2599", opaque="a47bc2e1e071fed1f4987396ecc9e28e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 61
+
+Type=METADATA-LOOKUP_TYPE&ID=Property%3AStatus&Format=COMPACT
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-ID: METADATA-LOOKUP_TYPE
+Content-Type: text/xml
+Content-Length: 596
+Date: Sat, 09 Jan 2010 13:05:57 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-LOOKUP_TYPE Resource="Property" Lookup="Status" Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	MetadataEntryID	LongValue	ShortValue	Value	</COLUMNS>
+<DATA>	S	Sold	S	S	</DATA>
+<DATA>	0	Off Market	0	O	</DATA>
+<DATA>	A	Active	A	A	</DATA>
+<DATA>	W	Withdrawn	W	W	</DATA>
+<DATA>	U	Under Contract	U	U	</DATA>
+<DATA>	C	Closed	C	C	</DATA>
+<DATA>	T	Temp Off Market	T	T	</DATA>
+<DATA>	P	Pending	P	P	</DATA>
+<DATA>	L	Leased	L	L	</DATA>
+<DATA>	X	Expired	X	X	</DATA>
+</METADATA-LOOKUP_TYPE>
+</RETS>
+
+[January 9, 2010 13:05:58 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:58 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:58 UTC] SAVE the credential for [POST /rets/getMetadata]
+[January 9, 2010 13:05:58 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:58 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:58 UTC] CREATE new Request for LOGOUT
+[January 9, 2010 13:05:58 UTC] SET socket - succeded
+[January 9, 2010 13:05:58 UTC] SET cookies - succeded
+[January 9, 2010 13:05:58 UTC] LOOK for an existing credential for [POST /rets/logout]
+[January 9, 2010 13:05:58 UTC] CREATE a new credential
+[January 9, 2010 13:05:58 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/logout HTTP/1.1
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Length: 0
+
+
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Digest realm="RETS Server", qop="auth", nonce="9b997a435fcaba0a98dba85e917325b8", opaque="7d091692a319ce5a7ebbd3d251f5c468"
+Content-Type: text/html;charset=ISO-8859-1
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD as Chunked
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<html><head><title>Apache Tomcat/4.1.31 - Error report</title><STYLE><!--H1{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} H3{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} BODY{font-family : sans-serif,Arial,Tahoma;color : black;background-color : white;} B{color : white;background-color : #0086b2;} HR{color : #0086b2;} --></STYLE> </head><body><h1>HTTP Status 401 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>This request requires HTTP authentication ().</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/4.1.31</h3></body></html>
+[January 9, 2010 13:05:58 UTC] GENERATE a credential
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/logout HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="9b997a435fcaba0a98dba85e917325b8", uri="/rets/logout", qop="auth", nc=00000001, cnonce="0a4f113b", response="e8b861299ecdbf8a5a43c05d1096d92d", opaque="7d091692a319ce5a7ebbd3d251f5c468"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=53D81EB8E2ECEA16978C110217A6F7F1
+Pragma: no-cache
+Content-Length: 0
+
+
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-Type: text/xml
+Content-Length: 158
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<RETS-RESPONSE>
+ConnectTime = 5
+Billing = 0.04
+SignOffMessage = Goodbye
+</RETS-RESPONSE>
+</RETS>
+
+[January 9, 2010 13:05:58 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:58 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:58 UTC] SAVE the credential for [POST /rets/logout]
+[January 9, 2010 13:05:58 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:58 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:58 UTC] CLOSING socket for Exchange due to RETS Logout
+[January 9, 2010 13:05:58 UTC] CREATE new Request for INITIAL_LOGIN
+[January 9, 2010 13:05:58 UTC] SET socket - failed
+[January 9, 2010 13:05:58 UTC] SET cookies - failed
+[January 9, 2010 13:05:58 UTC] LOOK for an existing credential for [POST /rets/login]
+[January 9, 2010 13:05:58 UTC] REUSE an existing credential
+[January 9, 2010 13:05:58 UTC] SET credential - succeeded
+[January 9, 2010 13:05:58 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SUCCESS on open
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/login HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="9b997a435fcaba0a98dba85e917325b8", uri="/rets/logout", qop="auth", nc=00000002, cnonce="0a4f113b", response="5bba050bdb2a68f76e6fb9a4c4f24215", opaque="7d091692a319ce5a7ebbd3d251f5c468"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.7
+Pragma: no-cache
+Content-Length: 0
+
+
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 400 URI from header </rets/logout> does not match Request-URI </rets/login>
+Content-Type: text/html;charset=ISO-8859-1
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+Connection: close
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD as Chunked
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<html><head><title>Apache Tomcat/4.1.31 - Error report</title><STYLE><!--H1{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} H3{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} BODY{font-family : sans-serif,Arial,Tahoma;color : black;background-color : white;} B{color : white;background-color : #0086b2;} HR{color : #0086b2;} --></STYLE> </head><body><h1>HTTP Status 400 - URI from header &lt;/rets/logout&gt; does not match Request-URI &lt;/rets/login&gt;</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>URI from header &lt;/rets/logout&gt; does not match Request-URI &lt;/rets/login&gt;</u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect (URI from header &lt;/rets/logout&gt; does not match Request-URI &lt;/rets/login&gt;).</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/4.1.31</h3></body></html>
+[January 9, 2010 13:05:58 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:58 UTC] CLOSING the connection because the server asked us to
+[January 9, 2010 13:05:58 UTC] CLOSING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:58 UTC] SAVE the credential for [POST /rets/login]
+[January 9, 2010 13:05:58 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:58 UTC] SHARE socket - failed
+[January 9, 2010 13:05:58 UTC] CREATE new Request for INITIAL_LOGIN
+[January 9, 2010 13:05:58 UTC] SET socket - failed
+[January 9, 2010 13:05:58 UTC] SET cookies - failed
+[January 9, 2010 13:05:58 UTC] LOOK for an existing credential for [POST /rets/login]
+[January 9, 2010 13:05:58 UTC] REUSE an existing credential
+[January 9, 2010 13:05:58 UTC] SET credential - succeeded
+[January 9, 2010 13:05:58 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SUCCESS on open
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/login HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="1082458331bb1a11e674cdd16402425c", uri="/rets/login", qop="auth", nc=00000002, cnonce="0a4f113b", response="1bf77a0c1213d5b479cd83056e835fe0", opaque="a23eaac6cbf7a92dfac1ba3ee6c30aff"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Pragma: no-cache
+Content-Length: 0
+
+
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+Set-Cookie: JSESSIONID=419F1F69300415264295BD9BFCACE038; Path=/
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-Type: text/xml
+Content-Length: 564
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<RETS-RESPONSE>
+Broker = 
+MemberName = Joe Schmoe
+MetadataVersion = 1.00.00001
+MinMetadataVersion = 1.00.00001
+User = Joe,NULL,NULL,NULL
+Login = http://demo.crt.realtors.org:6103/rets/login
+Logout = http://demo.crt.realtors.org:6103/rets/logout
+Search = http://demo.crt.realtors.org:6103/rets/search
+GetMetadata = http://demo.crt.realtors.org:6103/rets/getMetadata
+GetObject = http://demo.crt.realtors.org:6103/rets/getObject
+Balance = 194,962.20
+TimeoutSeconds = 1800
+</RETS-RESPONSE>
+</RETS>
+
+[January 9, 2010 13:05:58 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:58 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:58 UTC] SAVE the credential for [POST /rets/login]
+[January 9, 2010 13:05:58 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:58 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:58 UTC] SELECT CLAUSE: SearchType=Property&Class=RES&Select=ListingID
+[January 9, 2010 13:05:58 UTC] QUERY CLAUSE (decoded): Query=(Status=|S,O,A,W,U,C,T,P,L,X)
+[January 9, 2010 13:05:58 UTC] TYPE CLAUSE: QueryType=DMQL2&Format=COMPACT&Limit=100&StandardNames=0&Count=0
+[January 9, 2010 13:05:58 UTC] CREATE new Request for SEARCH
+[January 9, 2010 13:05:58 UTC] SET socket - succeded
+[January 9, 2010 13:05:58 UTC] SET cookies - succeded
+[January 9, 2010 13:05:58 UTC] LOOK for an existing credential for [POST /rets/search]
+[January 9, 2010 13:05:58 UTC] CREATE a new credential
+[January 9, 2010 13:05:58 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/search HTTP/1.1
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=419F1F69300415264295BD9BFCACE038
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 173
+
+SearchType=Property&Class=RES&Select=ListingID&Query=%28Status%3D%7CS%2CO%2CA%2CW%2CU%2CC%2CT%2CP%2CL%2CX%29&QueryType=DMQL2&Format=COMPACT&Limit=100&StandardNames=0&Count=0
+[January 9, 2010 13:05:58 UTC] RESPONSE ...
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Digest realm="RETS Server", qop="auth", nonce="292a7b0ed3301eab5c8f20ba4d01a2ee", opaque="404d8fc1a565b5e77a9511c374eb9e2e"
+Content-Type: text/html;charset=ISO-8859-1
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:58 UTC] READING the PAYLOAD as Chunked
+[January 9, 2010 13:05:58 UTC] PAYLOAD ...
+<html><head><title>Apache Tomcat/4.1.31 - Error report</title><STYLE><!--H1{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} H3{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} BODY{font-family : sans-serif,Arial,Tahoma;color : black;background-color : white;} B{color : white;background-color : #0086b2;} HR{color : #0086b2;} --></STYLE> </head><body><h1>HTTP Status 401 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>This request requires HTTP authentication ().</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/4.1.31</h3></body></html>
+[January 9, 2010 13:05:58 UTC] GENERATE a credential
+[January 9, 2010 13:05:58 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:58 UTC] SENDING ...
+POST /rets/search HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="292a7b0ed3301eab5c8f20ba4d01a2ee", uri="/rets/search", qop="auth", nc=00000001, cnonce="0a4f113b", response="4502370a3321354141872a316ba5fc7e", opaque="404d8fc1a565b5e77a9511c374eb9e2e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=419F1F69300415264295BD9BFCACE038
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 173
+
+SearchType=Property&Class=RES&Select=ListingID&Query=%28Status%3D%7CS%2CO%2CA%2CW%2CU%2CC%2CT%2CP%2CL%2CX%29&QueryType=DMQL2&Format=COMPACT&Limit=100&StandardNames=0&Count=0
+[January 9, 2010 13:05:59 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-Type: text/xml
+Content-Length: 227
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:59 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:59 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<DELIMITER value="09"/>
+<COLUMNS>	ListingID	</COLUMNS>
+<DATA>	1	</DATA>
+<DATA>	2	</DATA>
+<DATA>	4	</DATA>
+<DATA>	5	</DATA>
+<DATA>	3	</DATA>
+</RETS>
+
+[January 9, 2010 13:05:59 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:59 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:59 UTC] SAVE the credential for [POST /rets/search]
+[January 9, 2010 13:05:59 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:59 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:59 UTC] SELECT CLAUSE: SearchType=Property&Class=RES&Select=ListingID
+[January 9, 2010 13:05:59 UTC] QUERY CLAUSE (decoded): Query=(Status=|S,O,A,W,U,C,T,P,L,X)
+[January 9, 2010 13:05:59 UTC] TYPE CLAUSE: QueryType=DMQL2&Format=COMPACT&Limit=100&StandardNames=0&Count=0
+[January 9, 2010 13:05:59 UTC] CREATE new Request for SEARCH
+[January 9, 2010 13:05:59 UTC] SET socket - succeded
+[January 9, 2010 13:05:59 UTC] SET cookies - succeded
+[January 9, 2010 13:05:59 UTC] LOOK for an existing credential for [POST /rets/search]
+[January 9, 2010 13:05:59 UTC] REUSE an existing credential
+[January 9, 2010 13:05:59 UTC] SET credential - succeeded
+[January 9, 2010 13:05:59 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:59 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] SENDING ...
+POST /rets/search HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="292a7b0ed3301eab5c8f20ba4d01a2ee", uri="/rets/search", qop="auth", nc=00000002, cnonce="0a4f113b", response="2a888141ddd092ca5258eeb725fc9ada", opaque="404d8fc1a565b5e77a9511c374eb9e2e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:59 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=419F1F69300415264295BD9BFCACE038
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 173
+
+SearchType=Property&Class=RES&Select=ListingID&Query=%28Status%3D%7CS%2CO%2CA%2CW%2CU%2CC%2CT%2CP%2CL%2CX%29&QueryType=DMQL2&Format=COMPACT&Limit=100&StandardNames=0&Count=0
+[January 9, 2010 13:05:59 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-Type: text/xml
+Content-Length: 227
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:59 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:59 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<DELIMITER value="09"/>
+<COLUMNS>	ListingID	</COLUMNS>
+<DATA>	1	</DATA>
+<DATA>	2	</DATA>
+<DATA>	4	</DATA>
+<DATA>	5	</DATA>
+<DATA>	3	</DATA>
+</RETS>
+
+[January 9, 2010 13:05:59 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:59 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:59 UTC] SAVE the credential for [POST /rets/search]
+[January 9, 2010 13:05:59 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:59 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:59 UTC] CREATE new Request for SEARCH
+[January 9, 2010 13:05:59 UTC] SET socket - succeded
+[January 9, 2010 13:05:59 UTC] SET cookies - succeded
+[January 9, 2010 13:05:59 UTC] LOOK for an existing credential for [POST /rets/search]
+[January 9, 2010 13:05:59 UTC] REUSE an existing credential
+[January 9, 2010 13:05:59 UTC] SET credential - succeeded
+[January 9, 2010 13:05:59 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:59 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] SENDING ...
+POST /rets/search HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="292a7b0ed3301eab5c8f20ba4d01a2ee", uri="/rets/search", qop="auth", nc=00000003, cnonce="0a4f113b", response="fad0e176ea03f9ab44343e9b700c38d2", opaque="404d8fc1a565b5e77a9511c374eb9e2e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:59 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=419F1F69300415264295BD9BFCACE038
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 163
+
+SearchType=Property&Class=RES&Select=ListingID&Query=%28Status%3D%7CS%2CO%2CA%2CW%2CU%2CC%2CT%2CP%2CL%2CX%29&QueryType=DMQL2&Format=COMPACT&StandardNames=0&Count=2
+[January 9, 2010 13:05:59 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-Type: text/xml
+Content-Length: 86
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:59 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:59 UTC] PAYLOAD ...
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<COUNT Records="5"/>
+</RETS>
+
+[January 9, 2010 13:05:59 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:59 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:59 UTC] SAVE the credential for [POST /rets/search]
+[January 9, 2010 13:05:59 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:59 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:59 UTC] SELECT CLAUSE: SearchType=Property&Class=RES&Select=ListingID
+[January 9, 2010 13:05:59 UTC] QUERY CLAUSE (decoded): Query=(Status=|S,O,A,W,U,C,T,P,L,X)
+[January 9, 2010 13:05:59 UTC] TYPE CLAUSE: QueryType=DMQL2&Format=COMPACT&Limit=5&Offset=2&StandardNames=0&Count=0
+[January 9, 2010 13:05:59 UTC] CREATE new Request for SEARCH
+[January 9, 2010 13:05:59 UTC] SET socket - succeded
+[January 9, 2010 13:05:59 UTC] SET cookies - succeded
+[January 9, 2010 13:05:59 UTC] LOOK for an existing credential for [POST /rets/search]
+[January 9, 2010 13:05:59 UTC] REUSE an existing credential
+[January 9, 2010 13:05:59 UTC] SET credential - succeeded
+[January 9, 2010 13:05:59 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:59 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] SENDING ...
+POST /rets/search HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="292a7b0ed3301eab5c8f20ba4d01a2ee", uri="/rets/search", qop="auth", nc=00000004, cnonce="0a4f113b", response="a31f2875b78ce7905c15c1d8d6e9335b", opaque="404d8fc1a565b5e77a9511c374eb9e2e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:59 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=419F1F69300415264295BD9BFCACE038
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 180
+
+SearchType=Property&Class=RES&Select=ListingID&Query=%28Status%3D%7CS%2CO%2CA%2CW%2CU%2CC%2CT%2CP%2CL%2CX%29&QueryType=DMQL2&Format=COMPACT&Limit=5&Offset=2&StandardNames=0&Count=0
+[January 9, 2010 13:05:59 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-Type: text/xml
+Content-Length: 210
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:59 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:59 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<DELIMITER value="09"/>
+<COLUMNS>	ListingID	</COLUMNS>
+<DATA>	2	</DATA>
+<DATA>	4	</DATA>
+<DATA>	5	</DATA>
+<DATA>	3	</DATA>
+</RETS>
+
+[January 9, 2010 13:05:59 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:59 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:59 UTC] SAVE the credential for [POST /rets/search]
+[January 9, 2010 13:05:59 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:59 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:59 UTC] SELECT CLAUSE: SearchType=Property&Class=RES&Select=ListingID
+[January 9, 2010 13:05:59 UTC] QUERY CLAUSE (decoded): Query=(Status=|S,O,A,W,U,C,T,P,L,X)
+[January 9, 2010 13:05:59 UTC] TYPE CLAUSE: QueryType=DMQL2&Format=COMPACT-DECODED&Limit=100&StandardNames=0&Count=0
+[January 9, 2010 13:05:59 UTC] CREATE new Request for SEARCH
+[January 9, 2010 13:05:59 UTC] SET socket - succeded
+[January 9, 2010 13:05:59 UTC] SET cookies - succeded
+[January 9, 2010 13:05:59 UTC] LOOK for an existing credential for [POST /rets/search]
+[January 9, 2010 13:05:59 UTC] REUSE an existing credential
+[January 9, 2010 13:05:59 UTC] SET credential - succeeded
+[January 9, 2010 13:05:59 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:59 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] SENDING ...
+POST /rets/search HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="292a7b0ed3301eab5c8f20ba4d01a2ee", uri="/rets/search", qop="auth", nc=00000005, cnonce="0a4f113b", response="bdde789de26742cb8ee2fd955701f921", opaque="404d8fc1a565b5e77a9511c374eb9e2e"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:59 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=419F1F69300415264295BD9BFCACE038
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 181
+
+SearchType=Property&Class=RES&Select=ListingID&Query=%28Status%3D%7CS%2CO%2CA%2CW%2CU%2CC%2CT%2CP%2CL%2CX%29&QueryType=DMQL2&Format=COMPACT-DECODED&Limit=100&StandardNames=0&Count=0
+[January 9, 2010 13:05:59 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+Content-Type: text/xml
+Content-Length: 227
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:59 UTC] READING the PAYLOAD with Content-Length
+[January 9, 2010 13:05:59 UTC] PAYLOAD ...
+<?xml version="1.0"?>
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<DELIMITER value="09"/>
+<COLUMNS>	ListingID	</COLUMNS>
+<DATA>	1	</DATA>
+<DATA>	2	</DATA>
+<DATA>	4	</DATA>
+<DATA>	5	</DATA>
+<DATA>	3	</DATA>
+</RETS>
+
+[January 9, 2010 13:05:59 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:59 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:59 UTC] SAVE the credential for [POST /rets/search]
+[January 9, 2010 13:05:59 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:59 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:59 UTC] CREATE new Request for GETOBJECT
+[January 9, 2010 13:05:59 UTC] SET socket - succeded
+[January 9, 2010 13:05:59 UTC] SET cookies - succeded
+[January 9, 2010 13:05:59 UTC] LOOK for an existing credential for [POST /rets/getObject]
+[January 9, 2010 13:05:59 UTC] CREATE a new credential
+[January 9, 2010 13:05:59 UTC] READ as raw stream
+[January 9, 2010 13:05:59 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] SENDING ...
+POST /rets/getObject HTTP/1.1
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:59 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=419F1F69300415264295BD9BFCACE038
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 35
+
+Resource=Property&Type=Photo&ID=1:0
+[January 9, 2010 13:05:59 UTC] RESPONSE ...
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Digest realm="RETS Server", qop="auth", nonce="cec4652ba18db6ef308f8232f650ec47", opaque="7c4ba744bf59b810502c79a63ddfb274"
+Content-Type: text/html;charset=ISO-8859-1
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:59 UTC] READING the PAYLOAD as Chunked
+[January 9, 2010 13:05:59 UTC] PAYLOAD ...
+<html><head><title>Apache Tomcat/4.1.31 - Error report</title><STYLE><!--H1{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} H3{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} BODY{font-family : sans-serif,Arial,Tahoma;color : black;background-color : white;} B{color : white;background-color : #0086b2;} HR{color : #0086b2;} --></STYLE> </head><body><h1>HTTP Status 401 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>This request requires HTTP authentication ().</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/4.1.31</h3></body></html>
+[January 9, 2010 13:05:59 UTC] GENERATE a credential
+[January 9, 2010 13:05:59 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] SENDING ...
+POST /rets/getObject HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="cec4652ba18db6ef308f8232f650ec47", uri="/rets/getObject", qop="auth", nc=00000001, cnonce="0a4f113b", response="43c31d475ccaa1d738d47d588abea109", opaque="7c4ba744bf59b810502c79a63ddfb274"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:59 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=419F1F69300415264295BD9BFCACE038
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 35
+
+Resource=Property&Type=Photo&ID=1:0
+[January 9, 2010 13:05:59 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+MIME-Version: 1.0
+Content-ID: 1
+Object-ID: 1
+Content-Type: image/jpeg
+Transfer-Encoding: chunked
+Date: Sat, 09 Jan 2010 13:05:58 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:59 UTC] READING the PAYLOAD as Chunked
+[January 9, 2010 13:05:59 UTC] PAYLOAD ...
+ˇÿˇ‡ JFIF      ˇ€ C 
+
+	
+!'#))'#&%,1?5,.;/%&6J7;ACFGF*4MRLDR?EFCˇ€ C  C-&-CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCˇ¿  ‹&" ˇƒ           	
+ˇƒ µ   } !1AQa"q2Åë°#B±¡R—$3brÇ	
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyzÉÑÖÜáàâäíìîïñóòôö¢£§•¶ß®©™≤≥¥µ∂∑∏π∫¬√ƒ≈∆«»… “”‘’÷◊ÿŸ⁄·‚„‰ÂÊÁËÈÍÒÚÛÙıˆ˜¯˘˙ˇƒ        	
+ˇƒ µ  w !1AQaq"2ÅBë°±¡	#3Rbr—
+$4·%Ò&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyzÇÉÑÖÜáàâäíìîïñóòôö¢£§•¶ß®©™≤≥¥µ∂∑∏π∫¬√ƒ≈∆«»… “”‘’÷◊ÿŸ⁄‚„‰ÂÊÁËÈÍÚÛÙıˆ˜¯˘˙ˇ⁄   ? Ï-(•≈h@
+}4
+wj Ph§†PÅ•Õ6ä@?u¶—@«fó4⁄U†Õ†äJ \—öJ(s@4îPöZnhÄ$îû)Çú)PiG4‹S‘R`;¥Ñ–• 9S4¿Ÿß´`ÛﬁÅé1g•F—ëÕMæö‰æ«Â@»†jFR&9«Á@¨7i§≈Hx¶√h•§¶HQEZ8Œ9ˇ ,Sá4π™√7mJO¬hÑRbûh†@4¢>)W≠H§2-ò£mJqF3E¿b©ßÖ¿ß(»ÔJ„#≈Sã
+c50≠&)wRfòÑ§ÔA4P!iGZnis@îå6)wR04f£K∫ÄyÇõüz3H	ßdw®ÉRÜ¢¿JØŒ	Á∑∏ß	cë∆Õ˘üÍ*¥§mı˙{—Ωˆ™‰	r}=,ÅHw&i7g∆y=0AÌÔ‘Pß•F ;RÊùÇ„…Õ4öL“‚Å\JZJr‚Å	ÉEOnb	ﬁä.UäY≈&Óh⁄})n?∆®f‚ôªöq«a÷ö8]ƒÄ:ìÈ@áfå”P3rx†ßÅÕ9[ön(ÜIö7bõA4]Êì}1è4¬‘XDÖ©7TE©3L	sHZ£›FÍIö3LÕ!4 Ú‘QÊî ì4π®¡†M K∫ç’l“†	wRÜ®≥I∏ÉH	∑RÜÊ´áÍ?ã”˘S√Ç«É˙—`Ëü≥»¿eëK¿z±ŒX|«Ø==ÖWô∑làYÅ?E¡?Æ¸
+§›ìÈä,2}‘o ÈU⁄PÁø|R°fÎï†Ô¯”`~N*U ßî¨â…8Á£Ü^y'˙Í)cLÇ8À)«÷¨áRª”xc>¸R)!—π2ü«ˇ E>ﬂ*‡nøU¢êÃ¶ì Å◊€“§VW¡)û¶≥n§€$§ë¥≈«∑Æ?*tS·Ê8*Ï°∂é›@?é¸jÑ]P
+©#Ü ˚‡
+UO4ñ®9Séß◊˘‚©E3\Ã∞®ä~v#¿Qıü˛ΩhF„Ä∏>¬ê
+±äcÆ*p=ifãÅ_‹‚•e"£(ià@y†öPçå‚å÷ê∑Za®Ôµ[ |È3ÂØ-˘ç`]xÇfêò çêü~îÓêY≥¢§ÆauÀ—å ¨œ(º˚t≠≠;V∑ΩOÓe<lc‘˚ˇ Œíièïó®ßÑı£hÓ+≈!ßúTO◊'• &˛qMd~4¬Hbzˇ JÜYQÔ'ß'ÈL&uS…∆zR£ïCÊaBí3ûº’…09
+qçΩ?…8ßC;KåeX„89ÁåÛJ„±°€ä∞§û1UÑÅ∂íπr™x9¸~µ>ÌÀ¥ÒªäKM ûá+e2zÁ'˘ˇ Zp# ¶òä”9åâ≥˜ﬁ1€˛`S‚$0^πÅˇ &§x’«##Èö»ïÓ"kk4ïbcsÂá€…M¨r;ÁÇ ıê—ßißœ [h'¶Ã“ô#Óƒí©TS¬˜»ˇ ı‘… çFF’U˘ˇ èÎ≈2ﬁ&ùã6U\ı¡Z√Ì·
+‹ÚÁÔìÌå˛ca}1ˇ Î˛îÒB «C¿ˇ >„Û©7Ç…¥nÒúpA»ˇ 
+WÅ`lt©í‹cöUêåå˜ù∫ãÖÜ∑»π„#ú≈EêP∆´É»˚£∑·œÈR?\˛µRG9E¬≥çÎ€ ¯q˘“:Mπ‚f˚¨åGa‘QY:µœïß´‡;§°0}
+ìü”˘—J¿@§‹„∞„∂Ïˆ?®§¥çd∏y,™∞¯@$`ˆÎüß„UÏ‰1[e~˘Œ˛x¸’[X∏˚-ºë∆pEú1e˘±¸™õéáMU|LƒÉ*Çry$èÚ?
+}’…”Ì|‘áÃ⁄W8ÎÅú‡˜¨‰‘P&€u@°v®Ëˇ ıTZïÀ…lÏÌ√@†ˇ Æ*^¡mK£rÛºZÑ≤H“≈πc»˘T~µ∂Óë£I#™"å≥1¿∏˝>ˆ;{≈ñF(âíGRx8•´\Î˘Q¸±ê£†¸{öIÈv6µ–—ºÒtqji*≠*√˝9∑|◊˘m%ÏS§RBw$ütÅûx‡˚˚W"t∏¨°òÚXı™K=ﬁó#'ò ç“Ld¿áı§ßq8ùÌ∆°kgÈÂ
+:(ÍIÙπùSƒÛH
+€"68’Ò˝?œ5á<ÚÀ&Èùôœ ì€¸*•»-M»,Ní3±nI<‰ı4:®lö= <˙Rï‡≤‡cﬂ4äÍ »9˝©lÌêh2√“3u¿ ûhØ¶kÛ€ïä`fá†9˘‘}{˛?ùi€q∆}’∆πT·ΩjeƒÛ‹’)ë–¡É˚ôˇ %ˇ oˆÙX∆…}≤¯÷	RÅ|åt«“!nº—Ã≈ ç≥≠A…Ÿ7√¸jΩŒ®≤(˘™3ì¿ÁØzVSíFj=‰êπ∆AIÀKDæ∫ßí¨ XÔÎï>˝jh5uQ˜≥ÆNﬁπ¸˙u¨w$(U∆”∆OcLÑ±Èê8È“•I¢πntÀ≠¬£ôÓH?Ø∞•O≈Úè&CpÂò»w¸≈s≤πÚÚ "•˘®XÒÿg&´ôí‚é“ﬁ`Ò	bq,M‹rG˘œN¥Êõ0‰zÇ=;Â\U•‹ÕõW(Ì∆A>ƒk€ÍåJ€ﬁkqª ≤ïFÎ◊=9¸*˘àÂ7ƒÂ$ÿﬂƒF‹wÁ•QºπXuK)ïói∏±ˆt „Ÿ®æ–&û∏@ ÂYNUé{«WUy6Ã…ΩñÓ4ï|“p◊ˇ f41§t∂ƒﬂ ù∞!'tKå^†∑±ÎèLg“ïÊDõbJ?ºK ı^µ\(çfh—~]ã¬˚sé>¥I!ñ‚ÀèqCû	I„æ8§¿ê\G%⁄(;a∑.Nùªéº”K1ëT§jJÓ¿¿ˆıÛ¶yÜ∂⁄πÿù®…ÔÈ˜sìÎP⁄ X≥íÿ/úqû√Î˝(^@‡z~Ü*R‹èz£nJƒ∏ ≥Ã«ÅìË*¡p†ü∆ùÖrG>ïJ˘º∏º‚¨|ìºÅŒW0¸èÊ)ˇ iLœb	ß¥¡_h8`ÿ$vÔEÜsﬁ%gÇ€rïòÛ„ÜRßÈEG}æπ˛Ã?:∆<¿ @ ÉÚ˛éG¸äCÿä…à	]‹8ÖÄÏÏ}y™z¯Wöﬂ ¨Ç}ﬁ£Nq¯ÅK$Ì34)˜d,2x˚†d~˝t^2›_ƒ7Ç±‰¨á°»»?é>¥û9ﬂpÉÂÁø©˛tö≠ÍE
+ƒ¸8lÌœÛ¸È∂õ]ZUèR±Çxn˙ıõÆi≤,¢H ®b22q»Í?“ËFCæÒŒ>Êy5∑jãaP +MFÇ-§Â…Œ;
+–Y⁄QÂ§r#7òVVlΩ§ºÇAj9£Y£*√ ˆ™±È¨«-)'=Kz§∂ç∞+LœßÁTÈ¥G:2ÓÏ⁄À%Tºp:ß“†WV§p¬µÔ#ñÍ!Úéz_z√øéÁOàI+Ê,¸¡Á˘“Lv&W⁄OLÙ9ßál«é’J®Lyg‰é~F„Ù©Ã8·œ˝Úˇ ¸M0,ªû=ÒH√ ‰„£5	∫Ñˇ ‰èˇ ƒ”'ΩâPY±€kˇ „¥n8É˜«<ë∆jBø.ƒ»ﬁ≥"’§i#åÛ∆’Sú~$UÜö·Hm(ÔÇ¯”}∏ÎÉÏ)ép¿ÉèSQ}¢r?‘?È˛4	&ó
+mdoÛı† ·∏œ_Zk¶ ÁÂÚ®Æi¢ëH‰åg≠46ÚªyæSœÈR›ÀHî&WvqéÅáàÚ` 1ÀUg‹ÉíŸàÍXêy`Ïlê23ﬂÈÈPÓ=ê“ I‡¸f≠¿ç I#˚ﬂŒ®∆»#ßö±â¥lcû∏<‚©4&:Áâ¿Á≠6K…§Ä[À∂D^T∏˘ìËs¸È≤ÄÀÚûùjπR{‰`U‹ã-ÆÊÅdÂ	…WS«_j∏5%í‚;r™Lsí@R:˚Ê=+7 ,·UπŒr(e)*ol‡û@Î«ˇ ´Ûßp±Ÿ√u/ü#!sêÄ7‹∆Ûœˇ ™íÓÈºïê6∫±êß=pH˜˝kèã21v8¡¿´bÚR2H£øÕÅ¯—ÃMéçf4à≤!öd@¨Ã 3‹v˜œ•_ÜDHB©V}Äp=Ü?kàµï≠&Y-∂°h;ÙÈ[6:¥ì…7¥ÇA¿<~ü˛™iÉGSÁ¨YU`π
+£µWéÎ2:æ@‹F3˘Z©o ≈”Â«'ﬁ©^K$QíÅwF«=â¡üJ°$\ºª˚3¶’ ÇW'ÅÇq˝ÁH◊j$(≈rÎíÃ{~Q˘ƒñ‰\™£±([v?âSSAûï¬£nT€Ä3í9Ì◊“ëV5n#IuÖÛcÛ7⁄àŒﬁCO˝ıEQk˜µøéy˜xòz˘1å{
+(∏sŒüiíHÿÏ8p£˝Ó«ıYÆ’.0€¢|¸q≈Vk∂Úî!Ø#Ønˇ ÖQÛ¬À»Œ•±ÿÍ4Ÿ‚BK∂‚‡c Sû˝Zv±:Kj¨g8nü≠së›:“≠C+Ãˇ ?'ÈIΩë~Éïú‡ìäª·ì-íH™∞èìí=Ög]kÌJ/∑û¥¢Ïè1’D¸„ﬂ“îﬁ∑˚¢∏ıÒÄ©Sˇ j±iØ¨∑(≥F‡∞f„ı™u	ˆLËW;ü#ç∆£∫à:me‡‚¶D
+ "ô/\X∂Z–Ö#ç*øï8œkÄNÎÔÎ˘Sn§pvÒ\–∞ñFÛ.Áîñ˛m¢úcpn«Nç§îeaÌMût<VX˘≤[<—∞ úæF+§«ÓŒOUÁÚ¢QÂ`ùŒm†	Ø¿F:sˇ |µuvdä÷ªØñÁ8⁄0·ˇ ◊≠í¨« åU$Ó≈$⁄' #ﬁõ!BWs„ËE8¨ÄvÎÎQInda”ÿt?ÖT¶ö±1ÉL…ø»’∂©…1≤åâÊ:ìÉ∏Á'å÷’Óú¬q;≤n€—p£é∆∞ﬁ8“RX≥û∆}+#TáO*≤çΩOP2{”@|)$˘c±<”.%x¡é(ÛëìÉ⁄°Üs30˘â∆~¥Yå”g	elÙ~lı¢)b,0O™‡Ufxük!∫‡Ùßâv˜£®âŒÕ€ÅË9ß+n#®<‰{”LcmÉé´@%]ú∞ ˙ÒVC2≥aêÇ„ë«µVùÑó)¨§±ZóÕí"«Ô`ëÖøùCÊ§óÍ·ã,ÒÈœz`Y¿òÅ∆(V+œ5…ìåé{¶üÓÍ‰g®ì¯–!]∞‹{É“ûçï¡˙})ªcN>]Ÿ‡öGpßPH ûÙ¿ªi}qjÖ7ÓB1å„Jª‹SB§Ê«úÇƒìı¨sº√Ú4ò=æù(∏X‘äH°í$ê+åïÍ1ú?∆ùÈ .ÏUŒ:edˇ Ë5ôr“I¥∑%ZdWE—ŒFWéø“ù¿”‘›$q®fdz˚O“ä©†Ò®`JÓÓÊ*í«o·J£p;W?0ü_Ú*¯pG@y4ÏII8ËGÏGı§¡!aâ…ÔWl∏À*‰íH„"≥‡ÈíH'èßˇ ^¥ eÛÇ'`‰Ê•îW∫’ÆIh¡/LnÁÛ™È
+ïÂì?ÔUÕB$Ûc`œµ[@6Ø,x˛Õ22>Õûç?ﬂ°-9ﬂˇ ÅV¯	Ê∞√‰)Ì≈I N<ëÛz
+,Ã£¶ﬁﬁ€ëRE*ˆçü?óq]
+≥≤£HÅåï8¸kıõ]:ÍUìÕ$t˘G÷≠≠ÏwñÈ4aÇûÃ0EC‹§ÓL˚Äb}´"BB©»˚« í=+AÆbkc2æc∆süLèÈ\Ã∑÷à®Aòë) n«\g‚ú%aI*≈ë»˘pG•iÇ€?¬?ïsqﬂ¨Ñy√6Óı∫˜C∂9	…ëü†ß7vVDx˘A„Æ+G%qË=Ms//ó®æ‹W?/Jø%˙Œ·P∏„†#¸jmrûÜ≥ÿX@8$ö£|Ú0…}à'9œ“°ƒxU0ÇNÏs¸Í+E·VVrò'këèÁM¬ƒ©»Ö”|aß√o<CPôbµB˚#ì=2z˝¯”µuXÔT∆ÁX;}k&‚V<ÅÚ„÷îte=K[öWíR…ñtˇ .:SD~J}’‡gΩPíÂ‘^áﬁíKô[Kc°(wΩ∆í-y‡ÜYä©È◊¸iŸRπiû«õ,í(r¿Ù…©,úÃ]0 »9œz\£.ô÷5úéÿ‡—ˆ¿b$g<T ©ünıi!s‹ïKBXMpÕµ¬·ô±Ï:s˙’Y•ˇ M˘	a<„ØSWªaæ\úˆ„5JíÁï∆@Sû«?ÁÛ¶ò¨~»«i  1¸Ë[õπT√◊ UR†G?Oº?ùmÈä≠c∆~^‘ﬁàE-⁄Éq≥∞?J<Ω@ûp=ÀÒ≠Äãûò©6Ä:äWÑ∫íC˜Cg¶è_z${à9öåå‰]®˝¬}*¶∂†YßeQ¸Ë∏$c«|2Gñƒ{ØO»ölí∆ÌπASŒyˆ˜´öJ˜,0ºE‰g™©´ïîo5π»ReUm£±œøµ;ÇF^˝üƒ„äÀ∏ΩÚXÜå‚äw‰œZöŸX∏A¸gn*ºÑ`Òäù'˘/ü˘iì˙R`ã6™Ø p¶LÌåˇ Jª£ÆÎßs¸C"©√µRNxFÂèÎWt's#Û˜1Ù©)ìÍ®ëH˛¥ˆ D>á˙Sµ$Û%@†ù∏œ/Ÿÿ†RBïÎü√¸*Æå⁄Ø∆ëÏ$uﬁz}L!&V`s∏t®ÊiºÃ/ÃON√¸(∫ô∆ÍÌ+_Ã&9`ƒg5±·õâ™guºáaˇ e±öÃ’ÓcΩüu¥l®§ÚW?‰VÖ´¶ì“∆≈ñ@ª9»9Sìı*Hø®ÎñvµÇ11S»Âœ=˚◊%;ôüëìú‘›Ÿ9Ó{˙’´+)/§k¯”—Ó;M∏hÓ#Ièp&∫{È“@“dÄ  zqﬁπ€À	¥ÂB ßÊŒzèÛ≈lEsÕ´ÚFQÿ“lhŒñmŒH'ı-ú‰H0sü“©œÌ⁄ØÈñÍÑ≥{ûÖ3h9-?›˛ïd7?ºê™‡Áùu®V T®¡‹z’InÂ2Ô<zs⁄õï—	4^æ'Œ^~ÔésYrI∑%±éïbÍ˘§ÄzÅÅÙ™!h∞y9¶òÓ!lå©´≠Óœ©#˘
+• ßú˙UÎÇ—´åí1û¸–+ õT{ú—ß‰ÃÁ9%q»ÌQIr“H#⁄'sRY ±Œs˜pFsÕ+Ö…àQÉéy´ˆ˘RíNk8 ¬∞p=j˚\≈·‰
+ƒ~T1‹∏äß$f≤ılËÒÿ†¢˛Èe≥qd„∑ZáKÒŸ&ÀÀ4∫√g,˚[∆3Éı¢Íew…{•…˜˘´sHQˆsÈ˝kNøY.•ñmÿ+Ö {÷¥wˆ»6áœ‡i…€A-K¨UYÄ‘‚ò◊p?Ωè5ô{u€vìÚÙ*éé‚›ië’}ø»HLeYH9¥∫ùƒW6iÂ∏ﬁ%F⁄NÊ∞eH„
+¿˙äê].3º`R4´ï∂êºÑ‰∆Ω{Ö ’â/≈’ªàD©Üz÷Dó(Wnı9ˆ©c∫à4(d›)â#*ÚÃ ¸HHœz*V…v<åúÒEãi£I2Ü¶ ÛÈSç§2Çü0luÕii˙ìn¢·Ã≤ÚY∑∑Ø÷ü‰F˜í+F
+ÏëL[éó∫6C2®ln`úˇ :JÚﬁ∫n‡·1ü«5§ñÒ†cP= ßc˛Ë§–óv—€GΩÔ$gœ °3üΩT|Ñ{wõŒê∞Í•:˛µ’yKŸE!Ñ·Sı©‰B–‰·Rm$uÛw+ó∞ivX#ñ$∑ Æ ¸kvÊ ˙O5c1¨de<≥¥Ç=MffÍjAd2”tÄÅ˘ö;B‘ˆäcß"ñKKÄ~Ú±ÍU≤Í≠ÿuŒ
+êi≥XﬂJ§y2˜p?ïJÑá†È|?jéè≠≥©R2jÂºB Q‰„ìU¨bø≤…6Ô)=Kåü‘”ÆÂ‘¶|.üµ=£¸È8À®] ÷4€ªµ˝“æ‰åUkM
+tˇ Y∏ËÍ?≠+&™3à'u“®’c»õ˛˘Õ?{∞à•∞ñ6dh‰}ß_òzıë¬Aƒâ$Kèº—öõf®£‰éqûΩq˘S⁄=M”ÑéÉi£^√πµ¥Y
+Kvbuu„¡˛t—åè∞ﬂ˚FOÚßKg©LrÒJﬁπÈCÿj/»çá∞ bè{∞πáK¢Lÿ˚:# «Â˝Pû‹[ —»0ÍpEh≈o´∆õPø¸	≈G˝ï©HK8Lû§øZ~ÓeàÄ$©o^+FhÆÂåM"ßÀÛn#˝}±S&çx1ÌNm·ÿ,+¿zQy
+‰M†⁄•¬»5(«Õï2?0j?¯G§F8Ω∂d˛ˆpO·W√ß?ºπ»ˇ e?˙ıbﬁ6…3”Ê≈5Õ‘E¥‹˘Òí=9©ˇ ·œYè‡ø˝z’Ü“NÂåÍMOπGqOA›òc√¿6|“
+®˙`í‚HíáíGÎ]1í>Ì˘Vu§ë≈{v¸±g¿«‘“∫Ó=L®tT{˘ Y>Tå7åíGÙ≠X4;8ÿ4—y«Üb‰1QGv?∂Á
+É>Bç§„'¸E]72ë—qB≥&éc\EklüH∆i≤Bœ°H>n˛^H˙TyY@˙H%œY‘:àvt≤bÚﬁP {2äÆt8y˝¯–Vâ_≠&π˙“ˆûAbüˆ5∑¸˜sÙd⁄ÀHM]⁄‡ëıÅX¢èh«b¨mp#c¯üÒ¢¶#˝°¯
+)s∞).µEã£$ö!‘˜LŒ™I#f•∂>h˝‹*?‡8ùYÕÿ ˆˇ ÷´≥Ï+åãPv«˙<ß=J©´à‡èõz{7≈8=Pf?·NÚ$oºÎE§D‚EË	œ÷ùÊÏ*πµ'´è¿ıÈV‘„'£ñAtXY‘7v'ÅMYwÜ\z”8;è„J!â@˘3Õ>Yw¢C!∆F“úç7Å” Qüz¥≠π,vÍSI£4Ï∑zQªönh˜§Ó«j]∆ö1öZ ]«÷åÛ‘”z‘å¡A'∞¶≥ìÕ!<”<¿@*xÔëTÆÓkØà=j[≤E÷ê/Vê †gÊ#‘+/Ì,≠êBè\‘r1ë≤Ó	ı¨‹õ*∆É_ ÂH#ÎœÂL7‡’@◊p“çù2øùKo∏h] √ìäcﬁ†‰ìèsäÆR6;G”µA%ùºú37=>zI.£πaı∞NsL[îÑR≈dPŸsÎ˙Ê°6—ô€éÊLTãâHàòf3∑˝gn∏¸…´J;	êZŒç©œpŸc
+éµ©ëJ2≤˛ïoYEa-´Oˆ[G⁄nÉ»¨∑≤KÓ°uêgkÇyOÛ˛U)•©1ïÀ
+…ÎK‰∆9Ê™i@ƒ™∏‡wÜ˛ 9ï?: ≈ó6ƒ;R·1”ﬂö˜—…ê$_ÃSVÈ@˘ü9˜†?ó?{ß˚T›ÒØå˝k1¶CŒI&î∫û;èz,áúÉ¢˛TVkN√ÓÆ9¢ùòht#ˇ ûk˘S∂«ˇ <‘”cΩ≥”•tôè⁄ò˚ä?
+p˝≈®˜úS≤sˇ ÷§Ü?∫)x˛Ë¶göˆ†C¯˛Ë£+è∫)îºìH|ò˚¢êÑ˛Ë§¸h≈™{Œî*è_Ã“c–
+9†ò–˜oŒè)=[Ûßsﬁìw\åPy*çø:ˇ ñçKC0 ﬂ≥ìˇ -X~ê⁄èﬁ6
+~G©†C@òy¨s¯‘/eªÉ) v*1VÚià.iúléä‘ÃåÂ¢olıÎTπ«˙£˘“pzƒ00Ns!;„#≤Ä@≠A&Ö#ú™å˛5“ï·WÚ¶ßÔl†w9≈—&FŒœ©sN}>ÒKÄ{ù¿ˇ JËOîN?Ô∫aö8‹)‹G5&êå~igQÔ?÷îX¡I[Ëcˇ 
+ËÓﬂ°9ˇ ÄäO:‹ˇ ı“ãÅãñ!Â«®≤ß<¿s€f⁄‹€⁄ÕòØÿ‹oßÈ˘UÚêπ˘Q[Í ßµ¨8Â1ö=LÏËá?Ô”≥ì<@Áüz”k]é¬Ÿ˜Õa"èëˇ Ò„N‡g˝çUFm∆=¡•Fñº{Vâ∑π^Öè–‘N.¸ƒè®Õ;ä≈\Á†Ë)FÓ√Ù©K≥c ﬂ"ìyÌ¥g⁄ù≈aª[øSâ?ﬂ_ƒ)‹,j»PÕ¥Å”ØzGIWÊÜLéÍ‹˛Ωj8P‡¥ô‹E>u˚˚@Ù„Yî:+•f*ÒÌa‘f¶# „ÿ÷}√ΩU\`qVC‡ W>˘†	∑®‡ü îHæˇ à®8nW#Òß«=OÁ@4äy®öÈGbiÏ∏ˇ ı‘rF
+H¸højC¸,(∏=î‚†kwŒCú–"òtz,Ü∏`∆=à©léx™ﬁS≤‡∑?JA)·«Â@û‚ùª"™¨lﬂƒ·Oÿ¿gÈH≥qú‘”ˆ•√w4ÂÎH
+~lËzü∆ßÜË∑†{Êù*úO“´ÏéÑP2Ú»ß∏¸È∆™«<éµJ/Õ1˛9£¶h…è÷Ä—´v®û÷3¸8©'≠.HŒy¸(ªY°®⁄ÃÄ~uw9ˆ£†Ô≤‡üîä>Œf¸´Co_¶œq˘P#CÔÖ3Àá?~Jø≥«ÂQº˝GÂ@xNQÿ”æ‘Íy˙”˛∆ô·òSÖ¢é§ü≠0∑*›c¸ö•Y‚ËUá‘fê[E˝ﬁhÚ
+ëà>î ˝êø+¥ü•F÷±J‚£íF«ÃÄP1Dr0˛#Ù4 ¶ ÿè∆äêLÍ9P}≈Óy¢2~pq⁄ò˜.ËD`Çàää5¬Ü…,FrjHó.'µ Ç3ÇH…=˚‘∆3éü≠K"íC«„@\EH9ƒà»©‘
+Vª}ÕÒNnøÖ!‚Ä¿ÈHäp<
+_·†é∏ß2‰qäi8§úPW
+i€¿Îäf–«ú—Â™ˆœ÷Ä»Ω©{RÌ\(  `éîª}Üh ö P1FhÊ4å:PÆiH§NÙ5∞ÑqJÑ“PÚ£•0i˝©à3A≈7Ωs@ÉÈH.qK@¿9‚ìm)ÈöUÂNh•iÑZêút£≠ BQ{å“ÏN‡fû›)0#Ú‘vTòPˇŸ
+[January 9, 2010 13:05:59 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:59 UTC] SAVE the credential for [POST /rets/getObject]
+[January 9, 2010 13:05:59 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:59 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:59 UTC] CREATE links to images
+[January 9, 2010 13:05:59 UTC] DETECTED support for RETS Multipart option for GetObject
+[January 9, 2010 13:05:59 UTC] CREATE new Request for GETOBJECT
+[January 9, 2010 13:05:59 UTC] SET socket - succeded
+[January 9, 2010 13:05:59 UTC] SET cookies - succeded
+[January 9, 2010 13:05:59 UTC] LOOK for an existing credential for [POST /rets/getObject]
+[January 9, 2010 13:05:59 UTC] REUSE an existing credential
+[January 9, 2010 13:05:59 UTC] SET credential - succeeded
+[January 9, 2010 13:05:59 UTC] READ as raw stream
+[January 9, 2010 13:05:59 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] SENDING ...
+POST /rets/getObject HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="cec4652ba18db6ef308f8232f650ec47", uri="/rets/getObject", qop="auth", nc=00000002, cnonce="0a4f113b", response="cfd9f7b38e3c78c1288de845fb290318", opaque="7c4ba744bf59b810502c79a63ddfb274"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:59 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=419F1F69300415264295BD9BFCACE038
+Pragma: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 50
+
+Resource=Property&Type=Photo&ID=1%3A%2A&Location=1
+[January 9, 2010 13:05:59 UTC] RESPONSE ...
+HTTP/1.1 200 OK
+RETS-Version: RETS/1.5
+RETS-Server: Variman/3.0.0b2
+Cache-Control: private
+RETS-Request-ID: U571
+MIME-Version: 1.0
+Content-Type: multipart/parallel; boundary="c62e853e9f6bc228d8197e9fb533f5633155e505"
+Transfer-Encoding: chunked
+Date: Sat, 09 Jan 2010 13:05:59 GMT
+Server: Apache-Coyote/1.1
+[January 9, 2010 13:05:59 UTC] READING the PAYLOAD as Chunked
+[January 9, 2010 13:05:59 UTC] PAYLOAD ...
+--c62e853e9f6bc228d8197e9fb533f5633155e505
+Content-ID: 1
+Object-ID: 1
+Content-Type: text/xml
+Location: http://demo.crt.realtors.org:6103/objects/Property/Photo/1/1
+
+<RETS ReplyCode="0" ReplyText="Operation Successful"/>
+
+--c62e853e9f6bc228d8197e9fb533f5633155e505
+Content-ID: 1
+Object-ID: 2
+Content-Type: text/xml
+Location: http://demo.crt.realtors.org:6103/objects/Property/Photo/1/2
+
+<RETS ReplyCode="0" ReplyText="Operation Successful"/>
+
+--c62e853e9f6bc228d8197e9fb533f5633155e505
+Content-ID: 1
+Object-ID: 3
+Content-Type: text/xml
+Location: http://demo.crt.realtors.org:6103/objects/Property/Photo/1/3
+
+<RETS ReplyCode="0" ReplyText="Operation Successful"/>
+
+--c62e853e9f6bc228d8197e9fb533f5633155e505
+Content-ID: 1
+Object-ID: 4
+Content-Type: text/xml
+Location: http://demo.crt.realtors.org:6103/objects/Property/Photo/1/4
+
+<RETS ReplyCode="0" ReplyText="Operation Successful"/>
+
+--c62e853e9f6bc228d8197e9fb533f5633155e505--
+
+[January 9, 2010 13:05:59 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:59 UTC] SAVE the credential for [POST /rets/getObject]
+[January 9, 2010 13:05:59 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:59 UTC] SHARE socket - succeded
+[January 9, 2010 13:05:59 UTC] FOUND a HTTP MIME-VERSION header
+[January 9, 2010 13:05:59 UTC] FOUND correct CONTENT-TYPE header
+[January 9, 2010 13:05:59 UTC] CREATE new Request for LOGOUT
+[January 9, 2010 13:05:59 UTC] SET socket - succeded
+[January 9, 2010 13:05:59 UTC] SET cookies - succeded
+[January 9, 2010 13:05:59 UTC] LOOK for an existing credential for [POST /rets/logout]
+[January 9, 2010 13:05:59 UTC] REUSE an existing credential
+[January 9, 2010 13:05:59 UTC] SET credential - succeeded
+[January 9, 2010 13:05:59 UTC] READ as an XML formatted stream
+[January 9, 2010 13:05:59 UTC] OPENING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] Socket already open for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] SENDING ...
+POST /rets/logout HTTP/1.1
+Authorization: Digest username="Joe", realm="RETS Server", nonce="cec4652ba18db6ef308f8232f650ec47", uri="/rets/getObject", qop="auth", nc=00000003, cnonce="0a4f113b", response="ebb9ec41bedeb40f4e5a884ca66fff9f", opaque="7c4ba744bf59b810502c79a63ddfb274"
+Host: demo.crt.realtors.org:6103
+Accept: */*
+User-Agent: VieleRETS/1.1.8
+Date: Sat, 09 Jan 2010 13:05:59 GMT
+RETS-Request-ID: U571
+RETS-Version: RETS/1.5
+Cookie: JSESSIONID=419F1F69300415264295BD9BFCACE038
+Pragma: no-cache
+Content-Length: 0
+
+
+[January 9, 2010 13:05:59 UTC] RESPONSE ...
+HTTP/1.1 400 URI from header </rets/getObject> does not match Request-URI </rets/logout>
+Content-Type: text/html;charset=ISO-8859-1
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 09 Jan 2010 13:05:59 GMT
+Server: Apache-Coyote/1.1
+Connection: close
+[January 9, 2010 13:05:59 UTC] READING the PAYLOAD as Chunked
+[January 9, 2010 13:05:59 UTC] PAYLOAD ...
+<html><head><title>Apache Tomcat/4.1.31 - Error report</title><STYLE><!--H1{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} H3{font-family : sans-serif,Arial,Tahoma;color : white;background-color : #0086b2;} BODY{font-family : sans-serif,Arial,Tahoma;color : black;background-color : white;} B{color : white;background-color : #0086b2;} HR{color : #0086b2;} --></STYLE> </head><body><h1>HTTP Status 400 - URI from header &lt;/rets/getObject&gt; does not match Request-URI &lt;/rets/logout&gt;</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>URI from header &lt;/rets/getObject&gt; does not match Request-URI &lt;/rets/logout&gt;</u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect (URI from header &lt;/rets/getObject&gt; does not match Request-URI &lt;/rets/logout&gt;).</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/4.1.31</h3></body></html>
+[January 9, 2010 13:05:59 UTC] INTERPRET the PAYLOAD as XML through parsing
+[January 9, 2010 13:05:59 UTC] CLOSING the connection because the server asked us to
+[January 9, 2010 13:05:59 UTC] CLOSING socket for Request on demo.crt.realtors.org 6103
+[January 9, 2010 13:05:59 UTC] SHARE credential - succeeded using an object
+[January 9, 2010 13:05:59 UTC] SAVE the credential for [POST /rets/logout]
+[January 9, 2010 13:05:59 UTC] SHARE cookies - succeded
+[January 9, 2010 13:05:59 UTC] SHARE socket - failed
+[January 9, 2010 13:05:59 UTC] CLOSING socket for Exchange due to RETS Logout

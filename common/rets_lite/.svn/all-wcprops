@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/viele/!svn/ver/453/trunk/common/rets_lite
+END
+multipartResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/multipartResponse.php
+END
+xml.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/xml.php
+END
+autoDetect.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/autoDetect.php
+END
+component.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/component.php
+END
+abstractRetsExchange.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/abstractRetsExchange.php
+END
+io.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/io.php
+END
+member.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/member.php
+END
+net_io.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/net_io.php
+END
+searchRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/searchRequest.php
+END
+common_io.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/common_io.php
+END
+metadata.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/metadata.php
+END
+media_container.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/media_container.php
+END
+exchange.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/exchange.php
+END
+searchResponse.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/searchResponse.php
+END
+mediaRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/viele/!svn/ver/460/trunk/common/rets_lite/mediaRequest.php
+END

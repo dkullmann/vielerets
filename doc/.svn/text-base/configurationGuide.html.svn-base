@@ -1,0 +1,174 @@
+<html>
+
+<head>
+<title>VieleRETS Documentation</title>
+<link rel="stylesheet" type="text/css" href="./resources/styles.css">
+</head>
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+
+<table border="0" cellspacing="10" cellpadding="0">
+
+
+
+
+
+<!-- header -->
+
+<tr align="left">
+<td>
+
+<table border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+
+<!-- logo -->
+<td>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td><img src="./resources/viele_logo.gif"></td></tr>
+<tr><td><br/></td></tr>
+</table>
+</td>
+<!-- logo -->
+
+<!-- document block -->
+<td>
+
+<table border="2" cellspacing="0" cellpadding="5">
+
+<tr>
+<td id="docheading">
+Project Name
+</td>
+<td id="doctext">
+VieleRETS 1.1 
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Publication Name
+</td>
+<td id="doctext">
+Configuration Guide
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Publication Date
+</td>
+<td id="doctext">
+March 2006
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Maintainer
+</td>
+<td id="doctext">
+mlesswing@realtors.org
+</td>
+</tr>
+
+</table>
+</td>
+<!-- document block -->
+
+</tr>
+
+</table>
+</td>
+
+</tr>
+
+<!-- header -->
+
+
+
+
+
+
+<tr>
+<td>
+<a href="./index.html">Table of Contents</a>
+</td>
+</tr>
+
+
+
+
+
+
+<!-- configuration guide -->
+
+<tr>
+<td>
+<table border="0" cellspacing="10" cellpadding="0">
+
+<tr>
+<td id="sectionheading">
+Configuration Guide
+</td>
+</tr>
+
+<tr align="center">
+<td>
+<table border="0" cellspacing="10" cellpadding="0">
+
+<tr>
+<td>
+<a href="./sourceConfiguration.html">1.0 Source Configuration</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="./sampleConfigurations.html">2.0 Sample Source Configurations</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="./targetConfiguration.html">3.0 Target Configuration</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="./extractConfiguration.html">4.0 Extract Configuration</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<a href="./commandLineUsage.html">5.0 Command Line Usage</a>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+
+<!-- configuration guide -->
+
+
+
+<tr>
+<td>
+<a href="./index.html">Table of Contents</a>
+</td>
+</tr>
+
+
+
+
+
+
+</table>
+
+</body>
+
+</html>

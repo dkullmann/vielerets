@@ -1,0 +1,3 @@
+CREATE DATABASE viele;
+GRANT ALL PRIVILEGES on viele.* TO joe@localhost identified by 'schmoe';
+

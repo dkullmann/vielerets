@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict
+END
+datadict-firebird.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-firebird.inc.php
+END
+datadict-mssqlnative.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-mssqlnative.inc.php
+END
+datadict-postgres.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-postgres.inc.php
+END
+datadict-sybase.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-sybase.inc.php
+END
+datadict-db2.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-db2.inc.php
+END
+datadict-sapdb.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-sapdb.inc.php
+END
+datadict-informix.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-informix.inc.php
+END
+datadict-generic.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-generic.inc.php
+END
+datadict-mssql.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-mssql.inc.php
+END
+datadict-access.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-access.inc.php
+END
+datadict-oci8.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-oci8.inc.php
+END
+datadict-postgres.inc.php.bak
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-postgres.inc.php.bak
+END
+datadict-ibase.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-ibase.inc.php
+END
+datadict-mysql.inc.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/viele/!svn/ver/433/trunk/common/adodb5/datadict/datadict-mysql.inc.php
+END

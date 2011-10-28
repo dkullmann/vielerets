@@ -1,0 +1,8 @@
+
+<RETS ReplyCode="0" ReplyText="Operation Successful">
+<METADATA-RESOURCE Version="1.00.00001" Date="Mon, 18 Aug 2003 17:00:00 GMT">
+<COLUMNS>	ResourceID	StandardName	VisibleName	Description	KeyField	ClassCount	ClassVersion	ClassDate	ObjectVersion	ObjectDate	SearchHelpVersion	SearchHelpDate	EditMaskVersion	EditMaskDate	LookupVersion	LookupDate	UpdateHelpVersion	UpdateHelpDate	ValidationExpressionVersion	ValidationExpressionDate	ValidationLookupVersion	ValidationLookupDate	ValidationExternalVersion	ValidationExternalDate	</COLUMNS>
+<DATA>	Property	Property	Property	Property Database	ListingID	2	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	</DATA>
+<DATA>	Agent	Agent	Agent	Agent Database	AgentID	1	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	1.00.00001	Mon, 18 Aug 2003 17:00:00 GMT	</DATA>
+</METADATA-RESOURCE>
+</RETS>

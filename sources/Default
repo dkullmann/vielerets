@@ -1,0 +1,83 @@
+<?php
+
+//
+// Identification Settings 
+//
+define("APPLICATION","VieleRETS");
+define("VERSION","1.1.8");
+
+//
+// Connection Settings 
+//
+define("DESCRIPTION","A RETS Source");
+define("RETS_SERVER_ACCOUNT","Joe");
+define("RETS_SERVER_PASSWORD","Schmoe");
+define("RETS_SERVER_URL","http://demo.crt.realtors.org:6103/rets/login");
+define("RETS_CLIENT_PASSWORD","");
+define("RETS_DEFAULT_PORT","80");
+define("KEEP_ALIVE_SERVER",true);
+define("ENCODE_REQUESTS",true);
+define("POST_REQUESTS",true);
+define("SERVER_TIME_DIFFERENCE",0);
+define("NULL_QUERY_OPTION","REQUIREDS");
+
+//
+// detected settings 
+//
+define("DETECTED_SERVER_NAME","Apache-Coyote/1.1");
+define("DETECTED_DEFAULT_RETS_VERSION","1.5");
+define("DETECTED_MAXIMUM_RETS_VERSION","1.5");
+define("DETECTED_STANDARD_NAMES",false);
+define("PAGINATION",true);
+define("SIMULTANEOUS_LOGINS",false);
+
+//
+// Display Settings 
+//
+define("DISPLAY_PERFORMANCE",false);
+define("DISPLAY_RETS",false);
+define("DISPLAY_PROVIDER_NOTICE",false);
+define("DISPLAY_ACCOUNT",false);
+
+//
+// Text Query Settings 
+//
+define("SELECTION_RESOURCE","Property");
+define("SELECTION_CLASS","RES");
+define("UNIQUE_KEY","ListingID");
+define("COMPACT_DECODED_FORMAT",true);
+define("OWNERSHIP_VARIABLE","AgentID");
+define("DATE_VARIABLE","ModificationTimestamp");
+define("DETAIL_ITEMS","Garage,County,StreetNumber,ListingID,CloseDate,City,AgentID,Beds,TotalRooms,LivingArea,YearBuilt,ListingStatus,ListDate,PostalCode,ContractDate,ClosePrice,UnitNumber,StreetName,OfficeID,StateOrProvince,Board,Baths,ListPrice,ModificationTimestamp,StreetDirPrefix,Type");
+define("SUMMARY_ITEMS","AgentID,County,Board,Rooms,Baths,Garage,ModificationTimestamp,Unit,Bedrooms,ListDate,SqFt,YearBuilt,City,ListingID,State,ZipCode,CloseDate,ListPrice,StreetDirection,ClosePrice,Status,StreetName,ContractDate,LivingArea,StreetNumber");
+define("GALLERY_ITEMS","Garage,County,StreetNumber,ListingID,CloseDate,City,AgentID,Beds,TotalRooms,LivingArea,YearBuilt,ListingStatus,ListDate,PostalCode,ContractDate,ClosePrice,UnitNumber,StreetName,OfficeID,StateOrProvince,Board,Baths,ListPrice,ModificationTimestamp,StreetDirPrefix,Type");
+define("QUERY_ITEMS","ListingID");
+define("STANDARD_SERVER_RESPONSE",true);
+define("RESTRICTED_INDICATOR","");
+define("OFFSET_ADJUSTMENT","0");
+define("MEDIA_BYPASS",false);
+
+//
+// Media Query Settings 
+//
+define("MEDIA_TYPE","Photo");
+define("MEDIA_MULTIPART",true);
+define("MEDIA_LOCATION",true);
+define("MEDIA_LIST_ZERO_START",false);
+define("MEDIA_VALIDATE",false);
+define("MEDIA_PROXY","./media_proxy.php");
+define("NON_STANDARD_MEDIA",false);
+define("NON_STANDARD_MEDIA_RESOURCE","");
+define("NON_STANDARD_MEDIA_CLASS","");
+define("NON_STANDARD_MEDIA_TYPE","");
+
+$ListPrice_FORM=array("Less than $300,0000"=>"300000-","Between $300,000 and $400,000"=>"300000-400000","Greater than $400,000"=>"400000+");
+define("ALL_TYPES","Character,Int,Character,Character,Date,Int,Character,Int,Int,Int,Character,Character,Character,DateTime,Character,Date,Int,Character,Character,Decimal,Int,Int,Int,Int,Date");
+
+define("ALL_FIELDS","Status,Rooms,ZipCode,City,ContractDate,ClosePrice,County,YearBuilt,Garage,LivingArea,StreetNumber,StreetDirection,Board,ModificationTimestamp,StreetName,ListDate,AgentID,Unit,State,SqFt,Bedrooms,ListPrice,ListingID,Baths,CloseDate");
+
+define("ALL_INTERPRETATIONS","Lookup,NULL,NULL,NULL,NULL,Currency,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Currency,Number,NULL,NULL");
+
+define("ALL_REQUIREDS","1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
+
+?>

@@ -1,0 +1,328 @@
+<html>
+
+<head>
+<title>VieleRETS Documentation</title>
+<link rel="stylesheet" type="text/css" href="./resources/styles.css">
+</head>
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+
+<table border="0" cellspacing="10" cellpadding="0">
+
+
+
+
+
+<!-- header -->
+
+<tr align="left">
+<td>
+
+<table border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+
+<!-- logo -->
+<td>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td><img src="./resources/viele_logo.gif"></td></tr>
+<tr><td><br/></td></tr>
+</table>
+</td>
+<!-- logo -->
+
+<!-- document block -->
+<td>
+
+<table border="2" cellspacing="0" cellpadding="5">
+
+<tr>
+<td id="docheading">
+Project Name
+</td>
+<td id="doctext">
+VieleRETS 1.1 
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Publication Name
+</td>
+<td id="doctext">
+System Overview 
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Publication Date
+</td>
+<td id="doctext">
+May 2006
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Maintainer
+</td>
+<td id="doctext">
+mlesswing@realtors.org
+</td>
+</tr>
+
+</table>
+</td>
+<!-- document block -->
+
+</tr>
+
+</table>
+</td>
+
+</tr>
+
+<!-- header -->
+
+
+
+
+<tr>
+<td>
+
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+
+<td>
+<a href="./overview.html">System Overview</a>
+</td>
+
+<td>
+<a href="./index.html">Table of Contents</a>
+</td>
+
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+
+
+<!-- capabilities -->
+
+<tr>
+<td>
+  <table border="0" cellspacing="10" cellpadding="0">
+
+  <tr>
+  <td id="sectionheading">
+2.0 Package Capabilities 
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+    <table border="0" cellspacing="10" cellpadding="0">
+
+    <tr>
+    <td id="sectiontext">
+
+This package allows you to download Listing information and store it in a 
+variety of file formats (called
+<a href="#formats">Targets</var></a> 
+).  Searches send queries to the MLS in RETS format and returns those listings that
+satisfy the query.  The result set is then translated to the desired file 
+format.
+
+    </td>
+    </tr>
+
+<!-- --> 
+
+    <tr>
+    <td>
+      <table border="0" cellspacing="10" cellpadding="0">
+
+        <tr>
+        <td id="sectionheading">
+<a name="searches">Searches</a>
+        </td>
+        </tr>
+
+        <tr>
+        <td id="sectiontext">
+Listing information is retrieved from defined 
+<a href="./sourceConfiguration.html"><var>Sources</var></a> 
+(RETS Servers) with a form that looks something like this:
+
+        </td>
+        </tr>
+      </table>
+
+    </td>
+    </tr>
+  </table>
+
+  <tr>
+  <td>
+<img src="./resources/open_query_figure.jpg" border="0">
+</a></td>
+  </tr>
+
+  <tr>
+  <td>
+
+    <table border="0" cellspacing="10" cellpadding="0">
+      <tr>
+      <td>
+
+      <table border="0" cellspacing="10" cellpadding="0">
+        <tr>
+        <td id="sectiontext">
+
+Query forms are generated from information supplied when a <var>Source</var> 
+is defined.
+
+        </td>
+        </tr>
+      </table>
+
+    </td>
+    </tr>
+
+<!-- -->
+
+
+    <tr>
+    <td>
+      <table border="0" cellspacing="10" cellpadding="0">
+
+        <tr>
+        <td id="sectionheading">
+<a name="formats">Formats</a>
+        </td>
+        </tr>
+
+        <tr>
+        <td id="sectiontext">
+Data is created in a 
+<a href="./targetConfiguration.html"><var>Target</var></a> 
+defined for one of the following
+<a name="formats">formats</a>
+.
+
+<ul>
+
+<li>CSV - Comma Seperated Value.  This is a rectangular format, or table, that
+looks loke a spreadsheet.  Each cell is separated by a comma.  Separate files
+are generated for data and images<br/><br/>
+</li>
+
+<li>OR - Open-Realty 2.0.  This format drives a website powered by an
+Open-Realty pachage.<br/><br/>
+</li>
+
+<li>RDB - Relational Database.  This option writes separate tables for data
+and images to a relational database.<br/><br/>
+</li>
+
+<li>XML - Extended Markup Language.  A single files contains separate XML
+entities for each listing, including linls to images.
+</li>
+
+</ul>
+        </td>
+        </tr>
+      </table>
+
+    </td>
+    </tr>
+
+<!-- -->
+
+
+    <tr>
+    <td>
+      <table border="0" cellspacing="10" cellpadding="0">
+
+        <tr>
+        <td id="sectionheading">
+<a name="run_time">Run Time Control</a>
+        </td>
+        </tr>
+
+        <tr>
+        <td id="sectiontext">
+Controlling run time execution properties is achieved by defining an
+<a href="./extractConfiguration.html"><var>Extract</var></a> 
+. Extracts information is used by the GUI to run searches or can be used 
+at the
+<a href="./commandLineUsage.html">Command Line</a>
+for use in batch processing configurations.  A special Batch Control File
+is used to support  
+<a href="./commandLineUsage.html#advanced_query"><var>Advanced Query</var></a>
+specification. 
+        </td>
+        </tr>
+      </table>
+
+    </td>
+    </tr>
+
+<!-- -->
+
+
+
+
+
+    </table>
+
+  </td>
+  </tr>
+  </table>
+
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+<!-- capabilities -->
+
+
+
+<tr>
+<td>
+
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+
+<td>
+<a href="./overview.html">System Overview</a>
+</td>
+
+<td>
+<a href="./index.html">Table of Contents</a>
+</td>
+
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+
+
+
+
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,689 @@
+<html>
+
+<head>
+<title>VieleRETS Documentation</title>
+<link rel="stylesheet" type="text/css" href="./resources/styles.css">
+</head>
+
+<body topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+
+<table border="0" cellspacing="10" cellpadding="0">
+
+
+
+
+
+<!-- header -->
+
+<tr align="left">
+<td>
+
+<table border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+
+<!-- logo -->
+<td>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td><img src="./resources/viele_logo.gif"></td></tr>
+<tr><td><br/></td></tr>
+</table>
+</td>
+<!-- logo -->
+
+<!-- document block -->
+<td>
+
+<table border="2" cellspacing="0" cellpadding="5">
+
+<tr>
+<td id="docheading">
+Project Name
+</td>
+<td id="doctext">
+VieleRETS 1.1 
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Publication Name
+</td>
+<td id="doctext">
+Configuration Guide
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Publication Date
+</td>
+<td id="doctext">
+May 2006
+</td>
+</tr>
+
+<tr>
+<td id="docheading">
+Maintainer
+</td>
+<td id="doctext">
+mlesswing@realtors.org
+</td>
+</tr>
+
+</table>
+</td>
+<!-- document block -->
+
+</tr>
+
+</table>
+</td>
+
+</tr>
+
+<!-- header -->
+
+
+
+
+<tr>
+<td>
+
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+
+<td>
+<a href="./configurationGuide.html">Configuration Guide</a>
+</td>
+
+<td>
+<a href="./index.html">Table of Contents</a>
+</td>
+
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+
+
+
+
+<!-- target configuration -->
+
+<tr>
+<td>
+<table border="0" cellspacing="10" cellpadding="0">
+
+<tr>
+<td id="sectionheading">
+3.0 Target Configuration 
+</td>
+</tr>
+
+<tr>
+<td>
+<table border="0" cellspacing="10" cellpadding="0">
+
+<tr>
+<td id="sectiontext">
+
+The package supports downloading of RETS information to a number of different 
+formats.  The configuration file for each type of target is located in a plain
+text format and can be found at
+<a href="./installDistribution.html#installation_directory">{<var>INSTALLATION_DIRECTORY</var>}</a> 
+/ 
+<a href="./installDistribution.html#targets_directory">{<var>TARGETS_DIRECTORY</var>}</a> 
+/{<var>TARGET_NAME</var>}.  The <var>TARGET_NAME</var> is selected when a 
+<var>Target</var> is    
+<a href="./createTarget.html">defined</a>
+.  It is a good idea to keep a backup of <var>Target</var> configurations in 
+this directory. 
+
+<br/><br/>
+
+The <var>formats</var> that this package supports are:
+
+<ul>
+
+<li><a href="#o-r">Open-Realty 2.0</a> 
+- The popular Open Source website.
+<br/><br/>
+</li>
+
+<li><a href="#rdb">RDB</a> 
+- A "flat" table layout of data for a number of vendors.
+<br/><br/>
+</li>
+ 
+<li><a href="#xml">XML</a> 
+- A structured document.
+<br/><br/>
+</li>
+ 
+<li><a href="#csv">CSV</a> 
+- Comma-seperated Value structured document.
+<br/><br/>
+</li>
+ 
+</ul>
+ 
+Although the  format associated with each target type is different, the
+following fields are common across the formats: 
+
+<ul>
+
+<li><b>TYPE</b> - Defines the type of <var>Target</var> this configuration 
+represents.  Legal values are OR, RDB, XML or CSV.
+<br/><br/>
+</li>
+
+<li><b>DESCRIPTION</b> - A text description of the <var>Target</var>. 
+</li>
+
+</ul>
+ 
+</td>
+</tr>
+
+<tr>
+<td>
+  <table border="0" cellspacing="10" cellpadding="0">
+
+<!--         -->
+
+    <tr>
+    <td id="sectionheading">
+<a name="o-r">Open-Realty 2.0</a>
+      <table border="0" cellspacing="10" cellpadding="0">
+      <tr>
+      <td id="sectionText">
+
+Open-Realty Version 2.0 is supported by a Relational Database approach that
+contains separate index, image and elements tables.  The index table has one
+row for each listing.  The images table is similar in design to the index table.
+The elements table has one row that describes each field.  The columns are 
+mapped from the 
+<a href="./sourceConfiguration.html#summary_items">SUMMARY_ITEM</a> 
+parameter for the <var>Source</var> when you create an <var>Extract</var>. 
+
+<ul>
+
+<li><b>OPEN_REALTY_INSTALL_PATH</b> - The path to the installation of the 
+Open-Realty package.  This must be a fully defined path.
+Defaults to "/work/projects/open-realty201".
+<br/><br/>
+</li>
+ 
+<li><b>USERID_FIELD</b> - The field within the USER_TABLE that contains the 
+user ids defined in the installation.  Defaults to "userdb_id".
+<br/><br/>
+</li>
+ 
+<li><b>USERID_NAME</b> - The field within the USER_TABLE that contains the 
+user names defined in the installation.  Defaults to "userdb_user_name".
+<br/><br/>
+</li>
+ 
+<li><b>METADATA_FIELD</b> - The field within the METADATA_TABLE that contains
+the fields defined in the installation.  Defaults to 
+"listingsformelements_field_name".
+<br/><br/>
+</li>
+ 
+<li><b>METADATA_TYPE</b> - The field within the METADATA_TABLE that contains
+the data types of the fields defined in the installation.  Defaults to 
+"listingsformelements_field_type".
+<br/><br/>
+</li>
+ 
+<li><b>METADATA_REQUIRED</b> - The field within the METADATA_TABLE that 
+denoted whether a field is required or not.  Defaults to 
+"listingsformelements_required".
+<br/><br/>
+</li>
+ 
+<li><b>DATA_FIELD</b> - The field within the DATA_TABLE that contains
+the name of fields with data.  Defaults to 
+"listingsdbelements_field_name".
+<br/><br/>
+</li>
+ 
+<li><b>DATA_VALUE</b> - The field within the DATA_TABLE that contains
+the data values of the fields defined in the installation.  Defaults to 
+"listingsebelements_field_value".
+<br/><br/>
+</li>
+ 
+<li><b>BRAND</b> - The type of database.  Legal values are mysql and postgres7. 
+This value is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>SERVER</b> - The URL for Open-Realty.  This value is read directly from
+the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>ACCOUNT</b> - The DB user for Open-Realty.  This value is read directly
+from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>PASSWORD</b> - The DB password for Open-Realty.  This value is read 
+directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>DATABASE</b> - The DB database for Open-Realty.  This value is read 
+directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>USER_TABLE</b> - The DB user table for Open-Realty.  This value is read 
+directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>CLASS_LISTING_TABLE</b> - The name of the DB table used by Open-Realty 
+2.1 to control which listings are assigned to classes of property.  This value
+is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>CLASS_TABLE</b> - The name of the DB table used by Open-Realty 2.1 that 
+contains class information.  This value is read directly from the Open-Realty
+configuration.
+<br/><br/>
+</li>
+ 
+<li><b>METADATA_TABLE</b> - The DB metadata table for Open-Realty.  This value
+is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>COLUMN_LIST</b> - A list of columns that are defined.  This value
+is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>TYPE_LIST</b> - A list of data types in the same order as COLUMN_LIST.
+This value is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>REQUIRED_LIST</b> - A list of fields from COLUMN_LIST that are required.
+This value is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>INDEX_TABLE</b> - The DB index table for Open-Realty.  This value
+is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>DATA_TABLE</b> - The DB data table for Open-Realty.  This value
+is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>CACHE_PATH</b> - The fully-qualified path to use for ADODB caching.
+This value is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>DAYS_UNTIL_EXPIRATION</b> - The number of days a downloaded listing  
+will remain active in the system
+This value is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>IMAGE_TABLE</b> - The DB image table for Open-Realty.  This value
+is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>IMAGE_UPLOAD_PATH</b> - The fully-qualified path to use to store  
+downloaded images and thumbnails.
+This value is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>THUMBNAILS</b> - A boolean denoting whether to creatre thumbnails for
+downloaded images.
+This value is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>THUMBNAIL_PROGRAM</b> - The program to use to create thumbnails.
+This value is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>GD_VERSION_2</b> - If gd is used to produce thumbnails, a boolean
+that denotes the use of gc version 1 or gd version 2.  This value is read 
+directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>PATH_TO_IMAGEMAGICK</b> - The path to the ImageMagick program. 
+This value is read directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>THUMBNAIL_WIDTH</b> - The width of thumbnails to produce for 
+downloaded images.  Height is calculated automatically  This value is read 
+directly from the Open-Realty configuration.
+<br/><br/>
+</li>
+ 
+<li><b>THUMBNAIL_QUALITY</b> - The quality of thumbnails to produce for 
+downloaded images.  This value is read directly from the Open-Realty 
+configuration.
+<br/><br/>
+</li>
+ 
+<li><b>LISTING_DESCRIPTION_TEMPLATE</b> - A template of used to to create 
+page titles in Open-Realty.  Plain text is interpreted literally and file
+names should be enclosed with curly braces like so "{listingID}". 
+</li>
+ 
+</ul>
+
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+<!--         -->
+
+    <tr>
+    <td id="sectionheading">
+<a name="rdb">RDB</a>
+      <table border="0" cellspacing="10" cellpadding="0">
+      <tr>
+      <td id="sectionText">
+
+This section contains settings that are used to create downloads into  
+tables in a database.  There are separate data and image tables.  The data
+table has one row for each listing and the image table has one row for
+each image.  The columns are mapped from the 
+<a href="./sourceConfiguration.html#summary_items">SUMMARY_ITEM</a> 
+parameter for the <var>Source</var> when you create an <var>Extract</var>. 
+
+<ul>
+
+<li><b>BRAND</b> - The type of database.  Legal values are mysql, oracle, 
+mssql, access and postgres. 
+<br/><br/>
+</li>
+ 
+<li><b>SERVER</b> - The URL for the database.  
+<br/><br/>
+</li>
+ 
+<li><b>ACCOUNT</b> - The user account for the database.
+<br/><br/>
+</li>
+ 
+<li><b>PASSWORD</b> - The user account password for the database.
+<br/><br/>
+</li>
+ 
+<li><b>DATABASE</b> - The database.
+<br/><br/>
+</li>
+ 
+<li><b>DATA_TABLE</b> - The database table to fill with text information.
+<br/><br/>
+</li>
+ 
+<li><b>INCLUDE_IMAGES</b> - A boolean that indicates whether or not to 
+download images.  If set to "false", other image information for this 
+<var>Target</var> (IMAGE_TABLE, IMAGE_TABLE_KEY, IMAGE_DOWNLOAD_PATH and
+IMAGE_COLUMN_LIST) will be ignored. Defaults to "true". 
+<br/><br/>
+</li>
+ 
+<li><b>IMAGE_TABLE</b> - The database table to fill with image information. 
+Only the following fields can be mapped into the columns of this table when
+you define an <var>Extract</var>:
+<br/><br/>
+<ul>
+
+<li><b>ID</b> - the
+<a href="./sourceConfiguration.html#unique_key">UNIQUE_KEY</a> 
+.
+<br/><br/>
+</li>
+
+<li><b>INDEX</b> - the position of the image starting with 0.
+<br/><br/>
+</li>
+
+<li><b>URL</b> - the web address of the image (if it is available).  
+If the <var>Source</var> has the 
+<a href="./sourceConfiguration.html#media_location">MEDIA_LOCATION</a> 
+parameter set to "false", images are downloaded directly from the RETS server
+and this value will be "DIRECT".
+<br/><br/>
+</li>
+
+<li><b>PATH</b> - the full path on disk to the downloaded image.
+</li>
+
+</ul>
+<br/>
+The INCLUDE_IMAGES parameter must be set to "true" for this setting to have
+an effect.
+<br/><br/>
+</li>
+ 
+<li><b>IMAGE_TABLE_KEY</b> - The column of the IMAGE_TABLE to use for the
+unique key.  Used to identify the 
+<a href="./sourceConfiguration.html#unique_key">UNIQUE_KEY</a> 
+if the listing.  
+The INCLUDE_IMAGES parameter must be set to "true" for this setting to have
+an effect.
+<br/><br/>
+</li>
+ 
+<li><b>IMAGE_DOWNLOAD_PATH</b> - The fully-qualified path to use to store  
+downloaded images and thumbnails.
+The INCLUDE_IMAGES parameter must be set to "true" for this setting to have
+an effect.
+<br/><br/>
+</li>
+ 
+<li><b>AUTO_CREATE</b> - A boolean representing whether to create a table if it
+does not already exist.  Defaults to "false".
+<br/><br/>
+</li>
+
+<li><b>COLUMN_LIST</b> - A list of columns in the DATA_TABLE that are eligible 
+to be filled.
+<br/><br/>
+</li>
+ 
+<li><b>IMAGE_COLUMN_LIST</b> - A list of columns in the IMAGE_TABLE that are
+eligible to be filled.
+The INCLUDE_IMAGES parameter must be set to "true" for this setting to have
+an effect.
+</li>
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+<!--         -->
+
+    <tr>
+    <td id="sectionheading">
+<a name="xml">XML</a>
+      <table border="0" cellspacing="10" cellpadding="0">
+      <tr>
+      <td id="sectionText">
+
+This section contains settings that are used to create downloads into a 
+single XML-formatted file with a user defined container element.  The tag
+names of sub-elements are the fields specified in the 
+<a href="./sourceConfiguration.html#summary_items">SUMMARY_ITEM</a> 
+parameter for the <var>Source</var> and are choosen when you create an 
+<var>Extract</var>. 
+
+<ul>
+
+<li><b>CONTAINER_NAME</b> - The name of the XML container to use.
+<br/><br/>
+</li>
+ 
+<li><b>FILE_NAME</b> - The name of the file to create with the downloaded
+data.
+<br/><br/>
+</li>
+ 
+<li><b>DATA_DOWNLOAD_PATH</b> - The fully-qualified path to use to store  
+downloaded data.  The locatin of FILE_NAME
+<br/><br/>
+</li>
+ 
+<li><b>INCLUDE_IMAGES</b> - A boolean that indicates whether or not to 
+download images.  If set to "false", other image information for this 
+<var>Target</var> (IMAGE_DOWNLOAD_PATH) will be ignored.
+Defaults to "true". 
+<br/><br/>
+</li>
+ 
+<li><b>IMAGE_DOWNLOAD_PATH</b> - The fully-qualified path to use to store  
+downloaded images and thumbnails.
+The INCLUDE_IMAGES parameter must be set to "true" for this setting to have
+an effect.
+</li>
+ 
+</ul>
+
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+<!--         -->
+
+    <tr>
+    <td id="sectionheading">
+<a name="csv">CSV</a>
+      <table border="0" cellspacing="10" cellpadding="0">
+      <tr>
+      <td id="sectionText">
+
+This section contains settings that are used to create downloads into a single 
+comma-separated file.  The column names are the fields specified in the 
+<a href="./sourceConfiguration.html#summary_items">SUMMARY_ITEM</a> 
+parameter for the <var>Source</var> and are choosen when you create an 
+<var>Extract</var>. 
+
+<ul>
+
+<li><b>FILE_NAME</b> - The name of the file to create with the downloaded
+data.
+<br/><br/>
+</li>
+ 
+<li><b>DATA_DOWNLOAD_PATH</b> - The fully-qualified path to use to store  
+downloaded data.  The location of FILE_NAME
+<br/><br/>
+</li>
+ 
+<li><b>INCLUDE_IMAGES</b> - A boolean that indicates whether or not to 
+download images.  If set to "false", other image information for this 
+<var>Target</var> (IMAGE_DOWNLOAD_PATH and IMAGE_FILE_NAME) will be ignored.
+Defaults to "true". 
+<br/><br/>
+</li>
+ 
+<li><b>IMAGE_DOWNLOAD_PATH</b> - The fully-qualified path to use to store  
+downloaded images and thumbnails.
+The INCLUDE_IMAGES parameter must be set to "true" for this setting to have
+an effect.
+<br/><br/>
+</li>
+ 
+<li><b>IMAGE_FILE_NAME</b> - The name of the file to create with the downloaded
+image information.
+The INCLUDE_IMAGES parameter must be set to "true" for this setting to have
+an effect.
+</li>
+ 
+</ul>
+
+      </td>
+      </tr>
+
+      </table>
+
+    </td>
+    </tr>
+
+<!--         -->
+
+  </td>
+  </tr>
+
+
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- target configuration -->
+
+
+
+
+
+
+<tr>
+<td>
+
+<table border="0" cellspacing="10" cellpadding="0">
+<tr>
+
+<td>
+<a href="./configurationGuide.html">Configuration Guide</a>
+</td>
+
+<td>
+<a href="./index.html">Table of Contents</a>
+</td>
+
+</tr>
+</table>
+
+</td>
+</tr>
+
+
+
+
+
+
+
+</table>
+
+</body>
+
+</html>
